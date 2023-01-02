@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="studentLogin" layoutX="270.0" layoutY="117.0" mnemonicParsing="false" onAction="#studentLoginButtonAction" text="Student" />
+            <Button fx:id="studentGovernmentLogin" layoutX="265.0" layoutY="187.0" mnemonicParsing="false" onAction="#govLoginButtonAction" text="Samorząd" />
+            <Button fx:id="employeeLogin" layoutX="260.0" layoutY="255.0" mnemonicParsing="false" onAction="#employeeLoginButtonAction" text="Prowadzący" />
+            <Text layoutX="188.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kto się loguje?" wrappingWidth="223.26171875">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
