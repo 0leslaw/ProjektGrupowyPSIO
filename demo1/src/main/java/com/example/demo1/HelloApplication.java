@@ -18,6 +18,11 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    //można wykorzystać strategie do wyszukiwania ocen po prowadzących lub kursach
+    //dodać przycisk wyloguj cofania przy logowaniu
+    //dodać przycisk wyloguj w main panelu
+    //admin panel??
+    
     public static void main(String[] args) {
         launch();
     }
