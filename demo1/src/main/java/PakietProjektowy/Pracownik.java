@@ -13,8 +13,7 @@ public class Pracownik extends Uzytkownik{
     String katedra;
     ArrayList<Kursy> kursy = new ArrayList<>();
 
-    public Pracownik(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo,
-                     String wydzial, String tytul_naukowy, String katedra) {
+    public Pracownik(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, String wydzial, String tytul_naukowy, String katedra) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);
         this.wydzial = wydzial;
         this.tytul_naukowy = tytul_naukowy;

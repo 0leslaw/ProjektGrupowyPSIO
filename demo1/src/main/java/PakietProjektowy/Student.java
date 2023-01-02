@@ -5,15 +5,13 @@ import PakietKursy.Kursy;
 import java.util.ArrayList;
 
 public class Student extends Uzytkownik{
-
     int semestr;
     ArrayList<Kursy> lista_kursow = new ArrayList<>();
     String nr_indeksu;
     String kierunek;
     int liczba_nowych_powiadomien;
 
-    public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo,
-                   int semestr, String nr_indeksu, String kierunek, int liczba_nowych_powiadomien) {
+    public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek, int liczba_nowych_powiadomien) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);
         this.semestr = semestr;
         this.nr_indeksu = nr_indeksu;

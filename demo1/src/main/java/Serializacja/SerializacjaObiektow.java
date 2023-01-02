@@ -51,7 +51,7 @@ public class SerializacjaObiektow {
     }
 
     public static void zapisStudentow(ArrayList<Student> lista_osob, String nazwapliku)throws IOException {
-        ObjectOutputStream pl=null;
+        ObjectOutputStream pl = null;
         try{
             pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
             pl.writeObject(lista_osob);
@@ -148,7 +148,6 @@ public class SerializacjaObiektow {
         for (int i = 0; i < lista_osob.size(); i++) {
             if ((lista_osob.get(i).getLogin()).equals(login))
                 czy_poprawny_login = true;
-
         }
         return czy_poprawny_login;
     }

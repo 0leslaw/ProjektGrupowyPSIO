@@ -7,7 +7,6 @@ public abstract class Uzytkownik extends Osoba {
 
     public Uzytkownik(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo) {
         super(imie, drugie_imie, nazwisko, email);
-
         this.login = login;
         this.haslo = haslo;
     }
