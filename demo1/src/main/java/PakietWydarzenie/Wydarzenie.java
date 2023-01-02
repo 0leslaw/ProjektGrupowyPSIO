@@ -55,7 +55,6 @@ public class Wydarzenie {
         if(dodajacy_wydarzenie.getDrugie_imie() != ""){
             temp = dodajacy_wydarzenie.getDrugie_imie()+" ";
         }
-
         return nazwa_wydarzenia + "\n"+data_wydarzenia.toLocalDate().toString()+" "+
                 data_wydarzenia.toLocalTime().toString()+"\n\n"+opis_wydarzenia+"\n\ndodane przez: "+
                 dodajacy_wydarzenie.getImie()+" "+temp+

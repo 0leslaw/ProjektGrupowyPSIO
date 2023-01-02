@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Powiadomienie implements Obserwator{
-
     private Wydarzenie nowe_wydarzenie;
     private Obserwowany kalendarz;
 

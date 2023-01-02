@@ -3,7 +3,6 @@ package PakietProjektowy;
 import java.io.Serializable;
 
 public abstract class Osoba implements Serializable {
-
     protected String imie;
     protected String drugie_imie;
     protected String nazwisko;

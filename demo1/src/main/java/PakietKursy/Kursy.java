@@ -14,8 +14,6 @@ public class Kursy {
 //    ArrayList<String> dni_tygodnia_i_godziny;
 
     public Kursy(String nazwa_kursu, Pracownik prowadzacy, int ocena_prowadzacego_na_kursie) {
-
-
         this.nazwa_kursu = nazwa_kursu;
         this.prowadzacy = prowadzacy;
         this.ocena_prowadzacego_na_kursie = ocena_prowadzacego_na_kursie;

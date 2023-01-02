@@ -23,7 +23,7 @@ public class TestKalendarzaiPowiadomien {
         students.add(student);
         students.add(student2);
 
-        Serializacja.SerializacjaObiektow.zapisOsob(students,"PlikStudentow.ser");
+//        Serializacja.SerializacjaObiektow.zapisOsob(students,"PlikStudentow.ser");
 
         Pracownik pracownik1 = new Pracownik("ciur","","dupa","d","dw","dw",
                 "cd","dd","cdd");

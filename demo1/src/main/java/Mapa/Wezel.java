@@ -1,10 +1,9 @@
 package Mapa;
 
-import org.w3c.dom.Node;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Wezel implements Comparable<Wezel>, Serializable
 {
