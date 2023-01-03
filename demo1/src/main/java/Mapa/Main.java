@@ -2,6 +2,8 @@ package Mapa;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import Dane.*;
+import Menu.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -146,9 +148,11 @@ public class Main {
         wezly.add(D21);
         wezly.add(D2);
 
+        Menu menu = Dane.stworzMenu();
+        System.out.println(menu.jakieDanie());
 
-        Dijkstra dijkstra = new Dijkstra(wezly, D1, B4);
-        dijkstra.dijkstra_algo();
-        dijkstra.getDroga();
+//        Dijkstra dijkstra = new Dijkstra(wezly, D1, B4);
+//        dijkstra.dijkstra_algo();
+//        dijkstra.getDroga();
     }
 }
