@@ -18,4 +18,10 @@ public class Dane {
         Menu menu = new Menu(dania);
         return menu;
     }
+
+    public static Danie danie()
+    {
+        Menu menu = Dane.stworzMenu();
+        return menu.jakieDanie();
+    }
 }

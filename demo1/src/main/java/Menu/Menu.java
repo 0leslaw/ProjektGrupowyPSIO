@@ -11,12 +11,12 @@ public class Menu {
         this.menu = menu;
     }
 
-    public String jakieDanie() {
+    public Danie jakieDanie() {
         if(LocalDateTime.now().getDayOfWeek().getValue()<6)
         {
-            return this.menu.get(LocalDateTime.now().getDayOfWeek().getValue()-1).toString();
+            return this.menu.get(LocalDateTime.now().getDayOfWeek().getValue()-1);
         }else{
-            return "Stołówka nieczynna";
+            return null;
         }
     }
 }

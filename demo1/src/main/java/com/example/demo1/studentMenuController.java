@@ -1,15 +1,25 @@
 package com.example.demo1;
 
+import Dane.Dane;
+import Menu.Menu;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import Menu.*;
 
 public class studentMenuController {
+
+    private Danie danie;
     @FXML
     private Button announcementButton;
+
+    @FXML
+    private Label danieDzis;
 
     @FXML
     private Button cafeteriaButton;
@@ -56,11 +66,11 @@ public class studentMenuController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("cafeteria.fxml"));
             Stage stage = (Stage) cafeteriaButton.getScene().getWindow();
-
             stage.setTitle("Stołówka");
             stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {
+            e.printStackTrace();
             System.out.println("Nie można załadować panelu stołówki");
         }
     }
@@ -92,4 +102,5 @@ public class studentMenuController {
             System.out.println("Nie moża załadować panelu głównego");
         }
     }
+
 }

@@ -148,9 +148,9 @@ public class Main {
         wezly.add(D21);
         wezly.add(D2);
 
+
         Menu menu = Dane.stworzMenu();
         System.out.println(menu.jakieDanie());
-
 //        Dijkstra dijkstra = new Dijkstra(wezly, D1, B4);
 //        dijkstra.dijkstra_algo();
 //        dijkstra.getDroga();
