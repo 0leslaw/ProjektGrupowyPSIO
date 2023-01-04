@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -36,6 +37,8 @@ public class mapController implements Initializable {
     private TextField start;
     @FXML
     private TextField cel;
+    @FXML
+    private Label bladMapa;
 
     @FXML
     public void Map(Button mapButton){
@@ -66,25 +69,25 @@ public class mapController implements Initializable {
     }
 
     public void wyswietlDroge(){
-        System.out.println("test1");
         mapPath.getElements().clear();
+        circle.setVisible(false);
+        mapPath.setVisible(false);
         ArrayList<Wezel> droga = new ArrayList<>();
         Main tmp = new Main();
         droga.addAll(tmp.znajdzDroge(start.getText(), cel.getText()));
         if(droga.size()>0) {
+            bladMapa.setOpacity(0.0);
             mapPath.getElements().add(new MoveTo(droga.get(0).getPosX(), droga.get(0).getPosY()));
             for(int i = 1; i< droga.size(); i++)
             {
-                System.out.println("test for");
                 mapPath.getElements().add(new LineTo(droga.get(i).getPosX(), droga.get(i).getPosY()));
             }
             circle.setLayoutX(droga.get(droga.size()-1).getPosX());
             circle.setLayoutY(droga.get(droga.size()-1).getPosY());
             mapPath.setVisible(true);
             circle.setVisible(true);
-            System.out.println("test2");
         }else{
-            System.out.println("nie dziala");
+            bladMapa.setOpacity(1.0);
         }
 
     }
