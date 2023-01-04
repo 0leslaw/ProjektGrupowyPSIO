@@ -6,12 +6,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Path;
 import javafx.stage.Stage;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,17 +18,26 @@ public class mapController implements Initializable {
 
     @FXML
     private Button returnButton;
+
+    @FXML
+    private Button route;
+
+    @FXML
+    private Circle circle;
     @FXML
     private ImageView mapView;
+
+    @FXML
+    private Path mapPath;
 
     @FXML
     public void Map(Button mapButton){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("map.fxml"));
             Stage stage = (Stage) mapButton.getScene().getWindow();
-
             stage.setTitle("Mapa");
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.show();
         } catch(Exception e) {
             System.out.println("Nie można załadować map");
