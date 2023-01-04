@@ -18,7 +18,7 @@
       <TextField fx:id="start" layoutX="885.0" layoutY="28.0" promptText="miejsce początkowe" style="-fx-background-color: white;" />
       <TextField fx:id="cel" layoutX="885.0" layoutY="71.0" promptText="miejsce docelowe" style="-fx-background-color: white;" />
       <Button fx:id="route" layoutX="944.0" layoutY="113.0" mnemonicParsing="false" onAction="#wyswietlDroge" style="-fx-background-color: #11aacc;" text="Znajdź drogę" />
-      <Path fx:id="mapPath" fill="#1f93ff00" stroke="BLACK" strokeType="INSIDE" strokeWidth="6.0" visible="false" />
+      <Path fx:id="mapPath" fill="#1f93ff00" stroke="RED" strokeWidth="6.0" visible="false" />
       <Circle fx:id="circle" fill="#ffffff00" layoutX="89.0" layoutY="108.0" radius="19.0" stroke="#1429e4" strokeWidth="5.0" visible="false" />
    </children>
 </AnchorPane>
