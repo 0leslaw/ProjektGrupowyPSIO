@@ -10,7 +10,7 @@
 
 <AnchorPane centerShape="false" prefHeight="398.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.mapController">
    <children>
-      <ImageView fx:id="mapView" onMouseClicked="#getCords" pickOnBounds="true" preserveRatio="false" smooth="false">
+      <ImageView fx:id="mapView" pickOnBounds="true" preserveRatio="false" smooth="false">
          <image>
             <Image url="@map.png" />
          </image></ImageView>
