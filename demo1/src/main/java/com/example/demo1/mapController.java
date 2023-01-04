@@ -6,6 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -15,6 +17,9 @@ public class mapController implements Initializable {
 
     @FXML
     private Button returnButton;
+    @FXML
+    private ImageView mapView;
+
     @FXML
     public void Map(Button mapButton){
         try {
@@ -43,5 +48,14 @@ public class mapController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle){
+//        try {
+//            Image image = new Image();
+//            mapView.setImage(image);
+//            mapView.setCache(true);
+//        } catch (Exception e) {
+//            System.out.println("nie udało się załadować mapy");
+//            e.printStackTrace();
+//        }
+    }
 }
