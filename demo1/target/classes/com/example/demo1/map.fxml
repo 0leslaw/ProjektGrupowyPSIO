@@ -10,15 +10,15 @@
 
 <AnchorPane centerShape="false" prefHeight="398.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.mapController">
    <children>
-      <ImageView fx:id="mapView" onMouseClicked="#getCords" pickOnBounds="true" preserveRatio="false" smooth="false">
+      <ImageView fx:id="mapView" pickOnBounds="true" preserveRatio="false" smooth="false">
          <image>
             <Image url="@map.png" />
          </image></ImageView>
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" text="Powrót" />
-      <TextField layoutX="885.0" layoutY="28.0" promptText="miejsce początkowe" style="-fx-background-color: white;" />
-      <TextField layoutX="885.0" layoutY="71.0" promptText="miejsce docelowe" style="-fx-background-color: white;" />
-      <Button fx:id="route" layoutX="944.0" layoutY="113.0" mnemonicParsing="false" style="-fx-background-color: #11aacc;" text="Znajdź drogę" />
-      <Path fx:id="mapPath" fill="#1f93ff00" layoutX="272.0" layoutY="192.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.0" visible="false" />
+      <TextField fx:id="start" layoutX="885.0" layoutY="28.0" promptText="miejsce początkowe" style="-fx-background-color: white;" />
+      <TextField fx:id="cel" layoutX="885.0" layoutY="71.0" promptText="miejsce docelowe" style="-fx-background-color: white;" />
+      <Button fx:id="route" layoutX="944.0" layoutY="113.0" mnemonicParsing="false" onAction="#wyswietlDroge" style="-fx-background-color: #11aacc;" text="Znajdź drogę" />
+      <Path fx:id="mapPath" fill="#1f93ff00" stroke="BLACK" strokeType="INSIDE" strokeWidth="6.0" visible="false" />
       <Circle fx:id="circle" fill="#ffffff00" layoutX="89.0" layoutY="108.0" radius="19.0" stroke="#1429e4" strokeWidth="5.0" visible="false" />
    </children>
 </AnchorPane>

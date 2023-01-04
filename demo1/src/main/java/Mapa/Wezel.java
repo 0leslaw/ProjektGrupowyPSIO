@@ -98,4 +98,12 @@ public class Wezel implements Comparable<Wezel>, Serializable
     public void setOdwiedzone_wezly(ArrayList<Wezel> odwiedzone_wezly) {
         this.odwiedzone_wezly = odwiedzone_wezly;
     }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
 }
