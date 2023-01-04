@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Path?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.mapController">
+<AnchorPane centerShape="false" prefHeight="398.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.mapController">
    <children>
-      <Label alignment="CENTER" layoutX="254.0" layoutY="183.0" prefHeight="34.0" prefWidth="91.0" text="Mapa">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
+      <ImageView fx:id="mapView" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@map.png" />
+         </image></ImageView>
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" text="Powrót" />
-      <ImageView fx:id="mapView" fitHeight="177.0" fitWidth="322.0" layoutX="154.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true"></ImageView>
+      <TextField layoutX="885.0" layoutY="28.0" promptText="miejsce początkowe" style="-fx-background-color: white;" />
+      <TextField layoutX="885.0" layoutY="71.0" promptText="miejsce docelowe" style="-fx-background-color: white;" />
+      <Button layoutX="944.0" layoutY="113.0" mnemonicParsing="false" text="Znajdź drogę" />
+      <Path fx:id="mapPath" fill="DODGERBLUE" layoutX="272.0" layoutY="192.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
    </children>
 </AnchorPane>

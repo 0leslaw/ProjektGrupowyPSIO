@@ -10,6 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,6 +33,7 @@ public class mapController implements Initializable {
             stage.show();
         } catch(Exception e) {
             System.out.println("Nie można załadować map");
+            e.printStackTrace();
         }
     }
     @FXML
@@ -48,14 +51,5 @@ public class mapController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-//        try {
-//            Image image = new Image();
-//            mapView.setImage(image);
-//            mapView.setCache(true);
-//        } catch (Exception e) {
-//            System.out.println("nie udało się załadować mapy");
-//            e.printStackTrace();
-//        }
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle){}
 }
