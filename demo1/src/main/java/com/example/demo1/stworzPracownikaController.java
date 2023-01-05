@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 public class stworzPracownikaController implements Initializable {
 
+    @FXML
     private Button returnButton;
 
     @FXML
