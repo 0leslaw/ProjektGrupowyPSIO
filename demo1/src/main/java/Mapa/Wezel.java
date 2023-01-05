@@ -7,14 +7,19 @@ import java.util.ArrayList;
 
 public class Wezel implements Comparable<Wezel>, Serializable
 {
+    private int posX;
+
+    private int posY;
     private String nazwa;
     private ArrayList<Integer> odleglosci;
     private ArrayList<Wezel> sasiednie_wezly;
     private int odleglosc_od_zrodla;
     private ArrayList<Wezel> odwiedzone_wezly;
 
-    public Wezel(String nazwa){
+    public Wezel(String nazwa, int posX, int posY){
         this.nazwa = nazwa;
+        this.posX = posX;
+        this.posY = posY;
         this.odleglosci = new ArrayList<Integer>();
         this.sasiednie_wezly = new ArrayList<Wezel>();
         this.odwiedzone_wezly = new ArrayList<Wezel>();
@@ -92,5 +97,13 @@ public class Wezel implements Comparable<Wezel>, Serializable
 
     public void setOdwiedzone_wezly(ArrayList<Wezel> odwiedzone_wezly) {
         this.odwiedzone_wezly = odwiedzone_wezly;
+    }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
     }
 }
