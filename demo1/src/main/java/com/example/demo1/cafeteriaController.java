@@ -37,7 +37,11 @@ public class cafeteriaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        danieDzis.setText(Dane.danie().toString());
+        if(Dane.danie() != null) {
+            danieDzis.setText(Dane.danie().toString());
+        }else{
+            danieDzis.setText("stołówka nieczynna");
+        }
     }
     @FXML
     public void returnToMenu() {
@@ -46,6 +50,7 @@ public class cafeteriaController implements Initializable {
             Stage stage = (Stage) returnButton.getScene().getWindow();
 
             stage.setTitle("Menu");
+            stage.setResizable(false);
             stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {
