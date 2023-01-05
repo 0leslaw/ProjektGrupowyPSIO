@@ -2,12 +2,15 @@ package Dane;
 
 import Menu.Danie;
 import Menu.Menu;
+import Ogłoszenia.Ogloszenie;
 import PakietProjektowy.Pracownik;
 import PakietProjektowy.Samorzad;
 import PakietProjektowy.Student;
 import PakietProjektowy.Uzytkownik;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class Dane {
 
@@ -36,5 +39,13 @@ public class Dane {
         uzytkownicy.add(new Samorzad("Szymon", "Piotr", "Marciniak", "goatref", "szymek", "colina"));
         uzytkownicy.add(new Pracownik("Krzysztof", "Janusz", "Jodlowiec", "alga", "krzysiu", "macierz", "W4", "Doktor", "Matematyki"));
         return uzytkownicy;
+    }
+
+    public static PriorityQueue<Ogloszenie> stworzOgloszenia(){
+        PriorityQueue<Ogloszenie> ogloszenia = new PriorityQueue<>();
+        ogloszenia.add(new Ogloszenie("Zlatan Lewandowski", "I am the goat", "Zgodnie z rozmową na ostatnich zajęciach, w związku z moją nieobecnością, zajęcia 29.11.2022 oraz 06.12.2022 są odwołane i zostaną odrobione w ustalonym terminie. W związku z tym, kolokwium I z Logiki dla Informatyków (ćw.) odbędzie się na kolejnych zajęciach 13.12.2022.", LocalDateTime.now()));
+        ogloszenia.add(new Ogloszenie("Robert Ibra", "I am the goat", "Szanowni Państwo" + "\n" + "w dniu 30.11.2022 (środa) z powodu wyjazdu służbowego nie będę mógł poprowadzić wykładu z Organizacji Systemów Komputerowych, który planowo powinien się odbyć o godzinie 11:15 - 13:00. Wykład ten zostanie odrobiony w dniu 13.12.2022 r. o godz. 9:15 - 11:00 w sali 329 A-1.", LocalDateTime.now().plusHours(2)));
+        ogloszenia.add(new Ogloszenie("Leo Nazario", "I am the goat", "informuję, że z dniem 28 listopada 2022 r. Biblioteka PWr uruchomiła nowy system biblioteczny. System ALMA pozyskaliśmy w ramach organizowanego przez Bibliotekę Narodową konkursu: \"Narodowy Program Rozwoju Czytelnictwa 2.0 na lata 2021-2025\", zajmując pierwsze miejsce rankingowe. ALMA to jeden z najnowocześniejszych na świecie systemów chmurowych do zarządzania biblioteką i jej zasobami, wykorzystywany przez większość uczelni sieci Unite!, a także przez University of Cambridge, Harvard University, Boston College czy Princeton University Library. Życzę Państwu owocnego korzystania z usług Biblioteki!", LocalDateTime.now().minusHours(2)));
+        return ogloszenia;
     }
 }
