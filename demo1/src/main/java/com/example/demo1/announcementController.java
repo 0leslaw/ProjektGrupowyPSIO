@@ -50,6 +50,7 @@ public class announcementController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("main-panel-student.fxml"));
             Stage stage = (Stage) returnButton.getScene().getWindow();
+            stage.setResizable(false);
 
             stage.setTitle("Menu");
             stage.setScene(new Scene(root));
@@ -77,6 +78,7 @@ public class announcementController implements Initializable {
             BackgroundFill bfill = new BackgroundFill(c, null, null);
             box.setBackground(new Background(bfill));
             Label tytul = new Label(ogloszenie.getTytul());
+            tytul.setMinWidth(553);
             tytul.setPrefSize(24, 581);
             tytul.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,null, new BorderWidths(3.0))));
             tytul.setAlignment(Pos.CENTER);
@@ -88,6 +90,7 @@ public class announcementController implements Initializable {
             autor.setAlignment(Pos.CENTER);
             autor.setTextAlignment(TextAlignment.CENTER);
             autor.setFont(new Font(14));
+            autor.setMinWidth(553);
             Text text = new Text(ogloszenie.getText());
             VBox.setMargin(text, new Insets(15, 20, 10, 15));
             text.setTabSize(550);
@@ -98,6 +101,4 @@ public class announcementController implements Initializable {
             ogloszeniaBox.getChildren().add(box);
         }
     }
-
-
 }
