@@ -34,12 +34,6 @@ public class studentLoginController {
                     Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-student.fxml"));
                     Stage stage = (Stage) loginButton.getScene().getWindow();
 
-                    String login = loginTF.getText();
-                    String password = passwordTF.getText();
-
-                    System.out.println(login);
-                    System.out.println(password);
-
                     stage.setTitle("Main Panel");
                     stage.setScene(new Scene(root1));
                     stage.show();

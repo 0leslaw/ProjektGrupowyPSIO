@@ -2,6 +2,8 @@ package Dane;
 
 import Menu.Danie;
 import Menu.Menu;
+import PakietProjektowy.Pracownik;
+import PakietProjektowy.Samorzad;
 import PakietProjektowy.Student;
 import PakietProjektowy.Uzytkownik;
 
@@ -31,6 +33,8 @@ public class Dane {
     public static ArrayList<Uzytkownik> stworz_uzytkownikow(){
         ArrayList<Uzytkownik> uzytkownicy = new ArrayList<>();
         uzytkownicy.add(new Student("Zlatan", "Robert", "Lewandowski", "goat", "zlatan", "thegoat", 1, "357537", "Informatyka", 0 ));
+        uzytkownicy.add(new Samorzad("Szymon", "Piotr", "Marciniak", "goatref", "szymek", "colina"));
+        uzytkownicy.add(new Pracownik("Krzysztof", "Janusz", "Jodlowiec", "alga", "krzysiu", "macierz", "W4", "Doktor", "Matematyki"));
         return uzytkownicy;
     }
 }
