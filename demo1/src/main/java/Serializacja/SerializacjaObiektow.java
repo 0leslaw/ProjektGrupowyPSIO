@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SerializacjaObiektow {
-
-
-
 //Odczyt i zapis arraylist
 
     //osob

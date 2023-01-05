@@ -2,6 +2,8 @@ package Dane;
 
 import Menu.Danie;
 import Menu.Menu;
+import PakietProjektowy.Student;
+import PakietProjektowy.Uzytkownik;
 
 import java.util.ArrayList;
 
@@ -23,5 +25,12 @@ public class Dane {
     {
         Menu menu = Dane.stworzMenu();
         return menu.jakieDanie();
+    }
+
+    // testowo do zrobienia logowania
+    public static ArrayList<Uzytkownik> stworz_uzytkownikow(){
+        ArrayList<Uzytkownik> uzytkownicy = new ArrayList<>();
+        uzytkownicy.add(new Student("Zlatan", "Robert", "Lewandowski", "goat", "zlatan", "thegoat", 1, "357537", "Informatyka", 0 ));
+        return uzytkownicy;
     }
 }
