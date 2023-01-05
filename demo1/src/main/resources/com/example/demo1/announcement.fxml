@@ -20,45 +20,6 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <VBox prefHeight="154.0" prefWidth="553.0" style="-fx-background-color: #97ccf0;">
-                     <children>
-                        <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="29.0" prefWidth="581.0" style="-fx-border-color: black; -fx-border-width: 3;" text="Tytul" textAlignment="CENTER">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="577.0" style="-fx-border-color: black;" text="dodający" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="We and our partners store and/or access information on a device, such as unique IDs in cookies to process personal data. You may accept or manage your choices by clicking below, including your right to object where legitimate interest is used, or at any time in the privacy policy page. These choices will be signaled to our partners and will not affect browsing data. We and our partners store and/or access information on a device, such as unique IDs in cookies to process personal data. You may accept or manage your choices by clicking below, including your right to object where legitimate interest is used, or at any time in the privacy policy page. These choices will be signaled to our partners and will not affect browsing data." wrappingWidth="523.21630859375">
-                           <VBox.margin>
-                              <Insets bottom="15.0" left="20.0" right="10.0" top="15.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="15.0" top="10.0" />
-                     </VBox.margin>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </VBox>
-                  <VBox layoutX="30.0" layoutY="81.0" prefHeight="154.0" prefWidth="553.0" style="-fx-background-color: #97ccf0;">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="24.0" prefWidth="581.0" style="-fx-border-color: black; -fx-border-width: 3;" text="Tytul" textAlignment="CENTER">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="577.0" style="-fx-border-color: black;" text="dodający" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="We and our partners store and/or access information on a device, such as unique IDs in cookies to process personal data. You may accept or manage your choices by clicking below, including your right to object where legitimate interest is used, or at any time in the privacy policy page. These choices will be signaled to our partners and will not affect browsing data. We and our partners store and/or access information on a device, such as unique IDs in cookies to process personal data. You may accept or manage your choices by clicking below, including your right to object where legitimate interest is used, or at any time in the privacy policy page. These choices will be signaled to our partners and will not affect browsing data." wrappingWidth="523.21630859375">
-                           <VBox.margin>
-                              <Insets bottom="15.0" left="20.0" right="10.0" top="15.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="15.0" top="5.0" />
-                     </VBox.margin>
-                  </VBox>
                </children>
                <opaqueInsets>
                   <Insets />
