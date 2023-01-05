@@ -11,13 +11,14 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="studentLogin" layoutX="270.0" layoutY="117.0" mnemonicParsing="false" onAction="#studentLoginButtonAction" text="Student" />
-            <Button fx:id="studentGovernmentLogin" layoutX="265.0" layoutY="187.0" mnemonicParsing="false" onAction="#govLoginButtonAction" text="Samorząd" />
-            <Button fx:id="employeeLogin" layoutX="260.0" layoutY="255.0" mnemonicParsing="false" onAction="#employeeLoginButtonAction" text="Prowadzący" />
+            <Button fx:id="studentGovernmentLogin" layoutX="265.0" layoutY="175.0" mnemonicParsing="false" onAction="#govLoginButtonAction" text="Samorząd" />
+            <Button fx:id="employeeLogin" layoutX="261.0" layoutY="243.0" mnemonicParsing="false" onAction="#employeeLoginButtonAction" text="Prowadzący" />
             <Text layoutX="188.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kto się loguje?" wrappingWidth="223.26171875">
                <font>
                   <Font size="32.0" />
                </font>
             </Text>
+            <Button fx:id="adminLogin" layoutX="266.0" layoutY="310.0" mnemonicParsing="false" onAction="#adminLoginButtonAction" prefHeight="25.0" prefWidth="66.0" text="Admin" />
          </children>
       </AnchorPane>
    </center>

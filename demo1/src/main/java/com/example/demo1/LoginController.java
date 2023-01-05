@@ -20,6 +20,9 @@ public class LoginController {
     private Button studentLogin;
 
     @FXML
+    private Button adminLogin;
+
+    @FXML
     public void studentLoginButtonAction() {
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource("hello-view-student.fxml"));
@@ -52,6 +55,20 @@ public class LoginController {
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource("hello-view-employee.fxml"));
             Stage stage = (Stage) employeeLogin.getScene().getWindow();
+
+            stage.setTitle("Login Panel");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            System.out.println("Nie można załadować panelu głównego");
+        }
+    }
+
+    @FXML
+    public void adminLoginButtonAction(){
+        try {
+            Parent root1 = FXMLLoader.load(getClass().getResource("hello-view-admin.fxml"));
+            Stage stage = (Stage) adminLogin.getScene().getWindow();
 
             stage.setTitle("Login Panel");
             stage.setScene(new Scene(root1));
