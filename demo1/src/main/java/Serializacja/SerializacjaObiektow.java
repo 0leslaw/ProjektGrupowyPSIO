@@ -62,11 +62,11 @@ public class SerializacjaObiektow {
 
     public static ArrayList<Student> odczytStudentow(String nazwaPl)throws IOException,ClassNotFoundException{
 
-        ObjectInputStream pl2=null;
+        ObjectInputStream pl2 = null;
         ArrayList<Student> lista_osob = null;
         try{
-            pl2=new ObjectInputStream(new FileInputStream(nazwaPl));
-            lista_osob=(ArrayList<Student>) pl2.readObject();
+            pl2 = new ObjectInputStream(new FileInputStream(nazwaPl));
+            lista_osob = (ArrayList<Student>) pl2.readObject();
 
 
 
@@ -97,10 +97,10 @@ public class SerializacjaObiektow {
 
     public static ArrayList<Kursy> odczytKursow(String nazwaPl)throws IOException,ClassNotFoundException{
 
-        ObjectInputStream pl2=null;
+        ObjectInputStream pl2 = null;
         ArrayList<Kursy> lista_kursy = null;
         try{
-            pl2=new ObjectInputStream(new FileInputStream(nazwaPl));
+            pl2 = new ObjectInputStream(new FileInputStream(nazwaPl));
             lista_kursy=(ArrayList<Kursy>) pl2.readObject();
 
 
@@ -160,5 +160,7 @@ public class SerializacjaObiektow {
 
         return czy_poprawne_haslo;
     }
+
+
 
 }

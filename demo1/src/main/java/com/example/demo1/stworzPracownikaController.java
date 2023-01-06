@@ -17,11 +17,11 @@ public class stworzPracownikaController implements Initializable {
     private Button returnButton;
 
     @FXML
-    public void stworzPracownika(Button cafeteriaButton)
+    public void stworzPracownika(Button pracownikButton)
     {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dodaj-pracownika.fxml"));
-            Stage stage = (Stage) cafeteriaButton.getScene().getWindow();
+            Stage stage = (Stage) pracownikButton.getScene().getWindow();
             stage.setTitle("Dodawanie studenta");
             stage.setScene(new Scene(root));
             stage.show();

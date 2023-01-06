@@ -1,11 +1,13 @@
 package com.example.demo1;
 
+import PakietProjektowy.Samorzad;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -17,11 +19,32 @@ public class stworzSamorzadController implements Initializable {
     private Button returnButton;
 
     @FXML
-    public void stworzSamorzad(Button cafeteriaButton)
+    private TextField imie;
+
+    @FXML
+    private TextField drugie_imie;
+
+    @FXML
+    private TextField nazwisko;
+
+    @FXML
+    private TextField email;
+
+    @FXML
+    private TextField login;
+
+    @FXML
+    private TextField haslo;
+
+    @FXML
+    private Button dodajSamorzadButton;
+
+    @FXML
+    public void stworzSamorzad(Button samorzadButton)
     {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dodaj-samorzad.fxml"));
-            Stage stage = (Stage) cafeteriaButton.getScene().getWindow();
+            Stage stage = (Stage) samorzadButton.getScene().getWindow();
             stage.setTitle("Dodawanie studenta");
             stage.setScene(new Scene(root));
             stage.show();
@@ -34,6 +57,12 @@ public class stworzSamorzadController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+
+    public void dodajSamorzadButtonOnAction(){
+        Samorzad samorzad = new Samorzad(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText());
+        // serializacja samorzadu
     }
 
     @FXML

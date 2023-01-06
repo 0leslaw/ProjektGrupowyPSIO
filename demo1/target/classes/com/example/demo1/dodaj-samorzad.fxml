@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.stworzSamorzadController">
    <children>
       <Button fx:id="returnButton" layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#returnToMenu" text="Powrot" />
+      <TextField fx:id="imie" layoutX="120.0" layoutY="91.0" />
+      <TextField fx:id="drugie_imie" layoutX="120.0" layoutY="147.0" />
+      <TextField fx:id="nazwisko" layoutX="120.0" layoutY="199.0" />
+      <TextField fx:id="email" layoutX="318.0" layoutY="91.0" />
+      <Label alignment="CENTER" layoutX="150.0" layoutY="124.0" prefHeight="17.0" prefWidth="80.0" text="Drugie Imie" />
+      <Label alignment="CENTER" layoutX="376.0" layoutY="60.0" text="E-mail" />
+      <Label alignment="CENTER" layoutX="160.0" layoutY="182.0" prefHeight="17.0" prefWidth="60.0" text="Nazwisko" />
+      <Label layoutX="176.0" layoutY="60.0" text="Imie" />
+      <TextField fx:id="login" layoutX="319.0" layoutY="147.0" />
+      <Label alignment="CENTER" layoutX="379.0" layoutY="124.0" text="Login" />
+      <TextField fx:id="haslo" layoutX="318.0" layoutY="199.0" />
+      <Label alignment="CENTER" layoutX="379.0" layoutY="182.0" text="Hasło" />
+      <Button fx:id="dodajSamorzadButton" layoutX="270.0" layoutY="261.0" mnemonicParsing="false" onAction="#dodajSamorzadButtonOnAction" prefHeight="34.0" prefWidth="60.0" text="Dodaj" />
    </children>
 </AnchorPane>
