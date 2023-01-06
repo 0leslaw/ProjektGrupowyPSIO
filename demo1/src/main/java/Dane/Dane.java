@@ -58,6 +58,6 @@ public class Dane {
         wydarzenia.add(wydarzenie);
         wydarzenia.add(wydarzenie2);
         Kalendarz kalendarz = new Kalendarz(wydarzenia);
-        return kalendarz.stworzListeWydarzenNaDzien(kalendarz.zwracaDateNajbUbieglegoPoniedzialku().plusDays(7*przesuniecie), dzien.getDayOfWeek().getValue()-1);
+        return kalendarz.stworzListeWydarzenNaDzien(kalendarz.zwracaDateNajbUbieglegoPoniedzialku(dzien).plusDays(przesuniecie), dzien.getDayOfWeek().getValue()-1);
     }
 }

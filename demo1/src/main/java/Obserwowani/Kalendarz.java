@@ -67,7 +67,7 @@ public class Kalendarz  implements Obserwowany {
         return lista_wydarzen_na_dzien;
     }
 
-    public static LocalDateTime zwracaDateNajbUbieglegoPoniedzialku(){
+    public static LocalDateTime zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime dzien){
 
         LocalDateTime data_najb_ubieglego_poniedzialku = LocalDateTime.now();
         data_najb_ubieglego_poniedzialku = data_najb_ubieglego_poniedzialku.minusDays(data_najb_ubieglego_poniedzialku.getDayOfWeek().getValue()-1);
