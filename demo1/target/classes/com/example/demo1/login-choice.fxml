@@ -8,17 +8,29 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffeacc;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="studentLogin" layoutX="270.0" layoutY="117.0" mnemonicParsing="false" onAction="#studentLoginButtonAction" text="Student" />
-            <Button fx:id="studentGovernmentLogin" layoutX="265.0" layoutY="175.0" mnemonicParsing="false" onAction="#govLoginButtonAction" text="Samorząd" />
-            <Button fx:id="employeeLogin" layoutX="261.0" layoutY="243.0" mnemonicParsing="false" onAction="#employeeLoginButtonAction" text="Prowadzący" />
-            <Text layoutX="188.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kto się loguje?" wrappingWidth="223.26171875">
+            <Text layoutX="100.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kto się loguje?" textAlignment="CENTER" wrappingWidth="400.8616943359375">
                <font>
-                  <Font size="32.0" />
+                  <Font name="Consolas" size="39.0" />
                </font>
             </Text>
-            <Button fx:id="adminLogin" layoutX="266.0" layoutY="310.0" mnemonicParsing="false" onAction="#adminLoginButtonAction" prefHeight="25.0" prefWidth="66.0" text="Admin" />
+            <Button fx:id="studentLogin" layoutX="220.0" layoutY="122.0" mnemonicParsing="false" onAction="#studentLoginButtonAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #5070cc;" text="Student" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
+            <Button fx:id="studentGovernmentLogin" layoutX="220.0" layoutY="182.0" mnemonicParsing="false" onAction="#govLoginButtonAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #5070cc;" text="Samorząd" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
+            <Button fx:id="employeeLogin" layoutX="220.0" layoutY="242.0" mnemonicParsing="false" onAction="#employeeLoginButtonAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #5070cc;" text="Prowadzący" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
+            <Button fx:id="adminLogin" layoutX="220.0" layoutY="302.0" mnemonicParsing="false" onAction="#adminLoginButtonAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #5070cc;" text="Admin" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </center>

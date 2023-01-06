@@ -12,6 +12,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" text="Powrót" />
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

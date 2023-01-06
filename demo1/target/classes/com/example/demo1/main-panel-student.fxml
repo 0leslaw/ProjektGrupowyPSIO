@@ -8,17 +8,29 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.studentMenuController">
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffeacc;" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" layoutX="140.0" prefHeight="149.0" prefWidth="319.0" text="Student Main Panel">
+                <Label alignment="CENTER" layoutX="97.0" layoutY="57.0" prefHeight="80.0" prefWidth="406.0" text="Student Main Panel">
                     <font>
-                        <Font size="32.0" />
+                        <Font name="Consolas" size="32.0" />
                     </font>
                 </Label>
-            <Button fx:id="calendarButton" layoutX="391.0" layoutY="150.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="68.0" prefWidth="135.0" text="Kalendarz" />
-            <Button fx:id="mapButton" layoutX="391.0" layoutY="286.0" mnemonicParsing="false" onAction="#toMap" prefHeight="68.0" prefWidth="135.0" text="Mapa" />
-            <Button fx:id="announcementButton" layoutX="82.0" layoutY="150.0" mnemonicParsing="false" onAction="#toAnnouncement" prefHeight="68.0" prefWidth="135.0" text="Ogłoszenia" />
-            <Button fx:id="cafeteriaButton" layoutX="82.0" layoutY="286.0" mnemonicParsing="false" onAction = "#toCafeteria" prefHeight="68.0" prefWidth="135.0" text="Stołówka" />
+            <Button fx:id="calendarButton" layoutX="318.0" layoutY="173.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Kalendarz" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
+            <Button fx:id="mapButton" layoutX="318.0" layoutY="288.0" mnemonicParsing="false" onAction="#toMap" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Mapa" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
+            <Button fx:id="announcementButton" layoutX="48.0" layoutY="173.0" mnemonicParsing="false" onAction="#toAnnouncement" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Ogłoszenia" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
+            <Button fx:id="cafeteriaButton" layoutX="48.0" layoutY="288.0" mnemonicParsing="false" onAction="#toCafeteria" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Stołówka" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></Button>
             </children>
         </AnchorPane>
     </center>

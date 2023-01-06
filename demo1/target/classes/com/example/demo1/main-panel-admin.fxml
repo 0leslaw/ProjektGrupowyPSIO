@@ -2,11 +2,21 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.adminMenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.adminMenuController">
    <children>
-      <Button fx:id="dodajStudenta" layoutX="109.0" layoutY="71.0" mnemonicParsing="false" onAction="#toDodajStudenta" prefHeight="96.0" prefWidth="158.0" text="Dodaj Studenta" />
-      <Button fx:id="dodajPracownika" layoutX="329.0" layoutY="71.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="96.0" prefWidth="158.0" text="Dodaj Pracownika" />
-      <Button fx:id="dodajSamorzad" layoutX="109.0" layoutY="200.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="96.0" prefWidth="158.0" text="Dodaj Czlonka Samorzadu" />
+      <Button fx:id="dodajStudenta" layoutX="30.0" layoutY="108.0" mnemonicParsing="false" onAction="#toDodajStudenta" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Studenta" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
+      <Button fx:id="dodajPracownika" layoutX="332.0" layoutY="108.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Pracownika" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
+      <Button fx:id="dodajSamorzad" layoutX="30.0" layoutY="237.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Czlonka Samorzadu" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>
