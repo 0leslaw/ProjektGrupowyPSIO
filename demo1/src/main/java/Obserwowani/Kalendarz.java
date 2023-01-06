@@ -44,9 +44,11 @@ public class Kalendarz  implements Obserwowany {
 
         ArrayList<Wydarzenie> lista_wydarzen_na_dzien = new ArrayList<>();
 
-        for(int i = 0;i < lista_wydarzen.size();i++)
-            if(lista_wydarzen.get(i).getData_wydarzenia().toLocalDate().isEqual(pierwszy_dzien_szukanego_tygodnia.toLocalDate().plusDays(przesuniecie_od_poniedzialku)))
-                    lista_wydarzen_na_dzien.add(lista_wydarzen.get(i));
+        for(int i = 0;i < lista_wydarzen.size();i++) {
+            if (lista_wydarzen.get(i).getData_wydarzenia().toLocalDate().isEqual(pierwszy_dzien_szukanego_tygodnia.toLocalDate().plusDays(przesuniecie_od_poniedzialku))) {
+                lista_wydarzen_na_dzien.add(lista_wydarzen.get(i));
+            }
+        }
 
         //sortowanie
         if(lista_wydarzen_na_dzien.size()>1) {

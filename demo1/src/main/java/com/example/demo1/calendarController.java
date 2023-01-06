@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -46,6 +48,7 @@ public class calendarController implements Initializable
             System.out.println("Nie można załadować kalendarza");
         }
     }
+
     @FXML
     public void returnToMenu() {
         try {
@@ -62,81 +65,52 @@ public class calendarController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Node> dniTyg = new ArrayList<>();
-        for(int i = 0; i < 7; i++) {
-            dniTyg.add(grid.getChildren().get(i*8));
-        }
-        grid.getChildren().clear();
-        for(int i = 0; i < 7; i++) {
-            grid.add(dniTyg.get(i), i, 1);
-        }
-        for(int i = 0; i < 7; i++) {
-            VBox box = new VBox();
-            box.setPrefSize(32, 94);
-            Text l = new Text(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()).plusDays(i).toLocalDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-            l.setTextAlignment(TextAlignment.CENTER);
-            box.getChildren().add(l);
-            VBox.setMargin(l, new Insets(0, 0, 0, 12));
-            grid.add(box, i, 0);
-        }
-        for(int i =0; i<7; i++){
-            ArrayList<Wydarzenie> wydarzenia = Dane.stworzWydarzenia(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()), i);
-            for(int j = 0; j< wydarzenia.size(); j++){
-                grid.add(new Text(wydarzenia.get(j).getNazwa_wydarzenia()), i, j);
-            }
-        }
+        fillGrid(8);
     }
 
     public void NextWeek(){
-        ArrayList<Node> dniTyg = new ArrayList<>();
-        for(int i = 0; i < 7; i++) {
-            dniTyg.add(grid.getChildren().get(i));
-        }
-        grid.getChildren().clear();
-        for(int i = 0; i < 7; i++) {
-            grid.add(dniTyg.get(i), i, 1);
-        }
-        przesuniecie ++;
-        for(int i = przesuniecie*7; i < przesuniecie*7+7; i++) {
-            VBox box = new VBox();
-            box.setPrefSize(32, 94);
-            Text l = new Text(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()).plusDays(i).toLocalDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-            l.setTextAlignment(TextAlignment.CENTER);
-            box.getChildren().add(l);
-            VBox.setMargin(l, new Insets(0, 0, 0, 12));
-            grid.add(box, i-przesuniecie*7, 0);
-        }
-        for(int i =0; i<7; i++){
-            ArrayList<Wydarzenie> wydarzenia = Dane.stworzWydarzenia(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()).plusDays(7*i), i);
-            for(int j = 0; j< wydarzenia.size(); j++){
-                grid.add(new Text(wydarzenia.get(j).getNazwa_wydarzenia()), i, j);
-            }
-        }
+        przesuniecie++;
+        fillGrid(1);
     }
 
     public void LastWeek(){
+        przesuniecie--;
+        fillGrid(1);
+    }
+
+    public void fillGrid(int tmp) {
         ArrayList<Node> dniTyg = new ArrayList<>();
-        for(int i = 0; i < 7; i++) {
-            dniTyg.add(grid.getChildren().get(i));
+        for (int i = 0; i < 7; i++) {
+            dniTyg.add(grid.getChildren().get(i*tmp));
         }
         grid.getChildren().clear();
-        for(int i = 0; i < 7; i++) {
+        for (int i = 0; i < 7; i++) {
             grid.add(dniTyg.get(i), i, 1);
         }
-        przesuniecie --;
-        for(int i = przesuniecie*7; i < przesuniecie*7+7; i++) {
+        for (int i = przesuniecie * 7; i < przesuniecie * 7 + 7; i++) {
             VBox box = new VBox();
             box.setPrefSize(32, 94);
             Text l = new Text(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()).plusDays(i).toLocalDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
             l.setTextAlignment(TextAlignment.CENTER);
             box.getChildren().add(l);
             VBox.setMargin(l, new Insets(0, 0, 0, 12));
-            grid.add(box, i-przesuniecie*7, 0);
+            grid.add(box, i - przesuniecie * 7, 0);
         }
-        for(int i =0; i<7; i++){
-            ArrayList<Wydarzenie> wydarzenia = Dane.stworzWydarzenia(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()).plusDays(7*przesuniecie), i);
-            for(int j = 0; j< wydarzenia.size(); j++){
-                grid.add(new Text(wydarzenia.get(j).getNazwa_wydarzenia()), i, j);
+        for (int i = 0; i < 7; i++) {
+            ArrayList<Wydarzenie> wydarzenia = Dane.stworzWydarzenia(Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()), przesuniecie, i);
+            for (int j = 0; j < wydarzenia.size(); j++) {
+                VBox box = new VBox();
+                Text godzina = new Text(wydarzenia.get(j).getGodzina());
+                godzina.setFont(Font.font(8));
+                Label tytul = new Label(wydarzenia.get(j).getNazwa_wydarzenia());
+                tytul.setFont(Font.font(8));
+                tytul.setAlignment(Pos.CENTER_RIGHT);
+                tytul.setTextAlignment(TextAlignment.CENTER);
+                tytul.setMinWidth(91);
+                tytul.setMaxWidth(92);
+                box.getChildren().add(godzina);
+                box.getChildren().add(tytul);
+                grid.add(box, i, j + 2);
             }
         }
     }

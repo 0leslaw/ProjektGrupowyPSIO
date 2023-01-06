@@ -51,13 +51,17 @@ public class Dane {
         return ogloszenia;
     }
 
-    public static ArrayList<Wydarzenie> stworzWydarzenia(LocalDateTime dzien, int przesuniecie){
-        Wydarzenie wydarzenie = new Wydarzenie("Skok z wieży widokowej", LocalDateTime.of(2023,1,1,17,0),new Pracownik("Ronaldo", "", "Nazario", "", "", "", "", "", ""),"no opis oppis opis opi sisko i tak dalej no skok z wierzy widokowej");
+    public static ArrayList<Wydarzenie> stworzWydarzenia(LocalDateTime dzien, int przesuniecie, int od_pon){
+        Wydarzenie wydarzenie = new Wydarzenie("Skok z wieży widokowejaaaaaaaaaaaaaaaaaaaaaaaaaa", LocalDateTime.of(2023,1,1,17,0),new Pracownik("Ronaldo", "", "Nazario", "", "", "", "", "", ""),"no opis oppis opis opi sisko i tak dalej no skok z wierzy widokowej");
         Wydarzenie wydarzenie2 = new Wydarzenie("Skok z wieży w bukowcu", LocalDateTime.of(2023,1,1,15,0),new Pracownik("Abedi", "", "Pele", "", "", "", "", "", ""),"no bedzie sie dzialo");
+        Wydarzenie wydarzenie3 = new Wydarzenie("wyd3", LocalDateTime.now(), new Pracownik("Abedi", "", "Pele", "", "", "", "", "", ""), "no bedzie sie dzialo");
+        Wydarzenie wydarzenie4 = new Wydarzenie("wyd3", LocalDateTime.now().plusDays(7), new Pracownik("Abedi", "", "Pele", "", "", "", "", "", ""), "no bedzie sie dzialo");
         ArrayList<Wydarzenie> wydarzenia = new ArrayList<>();
         wydarzenia.add(wydarzenie);
         wydarzenia.add(wydarzenie2);
+        wydarzenia.add(wydarzenie3);
+        wydarzenia.add(wydarzenie4);
         Kalendarz kalendarz = new Kalendarz(wydarzenia);
-        return kalendarz.stworzListeWydarzenNaDzien(kalendarz.zwracaDateNajbUbieglegoPoniedzialku(dzien).plusDays(przesuniecie), dzien.getDayOfWeek().getValue()-1);
+        return kalendarz.stworzListeWydarzenNaDzien(dzien.plusDays(7*przesuniecie), od_pon);
     }
 }

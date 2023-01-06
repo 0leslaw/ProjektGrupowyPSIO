@@ -2,6 +2,7 @@ package PakietWydarzenie;
 import PakietProjektowy.Uzytkownik;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Wydarzenie {
 
@@ -59,5 +60,9 @@ public class Wydarzenie {
                 data_wydarzenia.toLocalTime().toString()+"\n\n"+opis_wydarzenia+"\n\ndodane przez: "+
                 dodajacy_wydarzenie.getImie()+" "+temp+
                 dodajacy_wydarzenie.getNazwisko()+"\n\n";
+    }
+
+    public String getGodzina(){
+        return data_wydarzenia.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 }
