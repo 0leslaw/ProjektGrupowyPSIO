@@ -14,6 +14,10 @@ public class Kalendarz  implements Obserwowany {
 
     // stan obiektu obserwowanego
     private ArrayList<Wydarzenie> lista_wydarzen = new ArrayList<>();
+
+    public Kalendarz(ArrayList<Wydarzenie> lista_wydarzen) {
+        this.lista_wydarzen = lista_wydarzen;
+    }
     @Override
     public void zarejestrujObserwatora(Obserwator obserwator) {
         lista_obserwatorow.add(obserwator);
@@ -63,7 +67,7 @@ public class Kalendarz  implements Obserwowany {
         return lista_wydarzen_na_dzien;
     }
 
-    public LocalDateTime zwracaDateNajbUbieglegoPoniedzialku(){
+    public static LocalDateTime zwracaDateNajbUbieglegoPoniedzialku(){
 
         LocalDateTime data_najb_ubieglego_poniedzialku = LocalDateTime.now();
         data_najb_ubieglego_poniedzialku = data_najb_ubieglego_poniedzialku.minusDays(data_najb_ubieglego_poniedzialku.getDayOfWeek().getValue()-1);
