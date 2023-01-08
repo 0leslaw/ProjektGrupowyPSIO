@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.govMenuController">
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffeacc;" BorderPane.alignment="CENTER">
             <children>
@@ -33,6 +33,11 @@
             <Button layoutX="319.0" layoutY="283.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Dodaj Punkt" textFill="WHITE">
                <font>
                   <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="16.0" />
                </font>
             </Button>
             </children>

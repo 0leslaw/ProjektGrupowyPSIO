@@ -31,6 +31,9 @@ public class studentMenuController{
 
     @FXML
     private Button mapButton;
+    @FXML
+    private Button returnButton;
+
 
 
     @FXML
@@ -55,5 +58,18 @@ public class studentMenuController{
     public void toMap() {
         mapController controller = new mapController();
         controller.Map(mapButton);
+    }
+    @FXML
+    public void returnButtonAction() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login-choice.fxml"));
+            Stage stage = (Stage) returnButton.getScene().getWindow();
+
+            stage.setTitle("Login Choice");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch(Exception e) {
+            System.out.println("Nie moża załadować panelu głównego");
+        }
     }
 }

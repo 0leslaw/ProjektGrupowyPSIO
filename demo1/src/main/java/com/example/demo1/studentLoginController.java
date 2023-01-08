@@ -15,6 +15,8 @@ import javafx.scene.control.PasswordField;
 public class studentLoginController {
     @FXML
     private Button loginButton;
+    @FXML
+    private Button returnButton;
 
     @FXML
     private TextField loginTF;
@@ -24,7 +26,6 @@ public class studentLoginController {
 
     @FXML
     private Label label;
-
     @FXML
     public void loginButtonAction() {
 
@@ -39,9 +40,23 @@ public class studentLoginController {
                     stage.show();
                 } catch(Exception e) {
                     System.out.println("Nie można załadować panelu głównego");
+                    e.printStackTrace();
                 }
              }
             else label.setVisible(true);
             }
         }
+    @FXML
+    public void returnButtonAction() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login-choice.fxml"));
+            Stage stage = (Stage) returnButton.getScene().getWindow();
+
+            stage.setTitle("Login Choice");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch(Exception e) {
+            System.out.println("Nie można załadować panelu głównego");
+        }
+    }
 }

@@ -1,20 +1,24 @@
 package com.example.demo1;
 
+import Dane.Dane;
+import Menu.Menu;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
 import javafx.stage.Stage;
+import Menu.*;
 
-public class adminMenuController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    @FXML
-    private Button dodajStudenta;
-    @FXML
-    private Button dodajPracownika;
-    @FXML
-    private Button dodajSamorzad;
+
+public class employeeMenuController {
     @FXML
     private Button returnButton;
     @FXML
@@ -29,20 +33,5 @@ public class adminMenuController {
         } catch(Exception e) {
             System.out.println("Nie moża załadować panelu głównego");
         }
-    }
-
-    public void toDodajStudenta(){
-        stworzStudentaController controller = new stworzStudentaController();
-        controller.stworzStudenta(dodajStudenta);
-    }
-
-    public void toDodajPracownika(){
-        stworzPracownikaController controller = new stworzPracownikaController();
-        controller.stworzPracownika(dodajPracownika);
-    }
-
-    public void toDodajSamorzad(){
-        stworzSamorzadController controller = new stworzSamorzadController();
-        controller.stworzSamorzad(dodajSamorzad);
     }
 }

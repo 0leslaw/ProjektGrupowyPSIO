@@ -24,6 +24,22 @@ public class employeeLoginController {
 
     @FXML
     private Label label;
+
+    @FXML
+    private Button returnButton;
+    @FXML
+    public void returnButtonAction() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login-choice.fxml"));
+            Stage stage = (Stage) returnButton.getScene().getWindow();
+
+            stage.setTitle("Login Choice");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch(Exception e) {
+            System.out.println("Nie moża załadować panelu głównego");
+        }
+    }
     @FXML
     public void loginButtonAction() {
         for(Uzytkownik uzytkownik: Dane.stworz_uzytkownikow()) {

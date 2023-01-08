@@ -31,6 +31,11 @@
                <font>
                   <Font name="Consolas" size="20.0" />
                </font></Button>
+            <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
     </center>

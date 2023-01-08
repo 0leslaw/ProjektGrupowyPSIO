@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 public class govLoginController {
     @FXML
     private Button loginButton;
+    @FXML
+    private Button returnButton;
 
     @FXML
     private TextField loginTF;
@@ -24,6 +26,20 @@ public class govLoginController {
 
     @FXML
     private Label label;
+
+    @FXML
+    public void returnButtonAction() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login-choice.fxml"));
+            Stage stage = (Stage) returnButton.getScene().getWindow();
+
+            stage.setTitle("Login Choice");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch(Exception e) {
+            System.out.println("Nie moża załadować panelu głównego");
+        }
+    }
 
     @FXML
     public void loginButtonAction() {
