@@ -24,12 +24,12 @@
                   <Font name="Consolas" size="36.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="267.0" layoutY="121.0" prefHeight="20.0" prefWidth="65.0" text="Login" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="267.0" layoutY="115.0" prefHeight="20.0" prefWidth="65.0" text="Login" textAlignment="CENTER">
                <font>
                   <Font name="Consolas" size="16.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="267.0" layoutY="200.0" prefHeight="20.0" prefWidth="65.0" text="Hasło" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="267.0" layoutY="191.0" prefHeight="20.0" prefWidth="65.0" text="Hasło" textAlignment="CENTER">
                <font>
                   <Font name="Consolas" size="16.0" />
                </font>

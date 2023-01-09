@@ -30,7 +30,7 @@ public class adminLoginController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login-choice.fxml"));
             Stage stage = (Stage) returnButton.getScene().getWindow();
-
+            stage.setResizable(false);
             stage.setTitle("Login Choice");
             stage.setScene(new Scene(root));
             stage.show();

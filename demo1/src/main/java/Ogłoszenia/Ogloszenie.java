@@ -38,9 +38,9 @@ public class Ogloszenie implements Comparable<Ogloszenie>{
     @Override
     public int compareTo(Ogloszenie o) {
         if(o.getDataDodania().isAfter(this.getDataDodania()))
-            return -1;
-        if(o.getDataDodania().isBefore(this.getDataDodania()))
             return 1;
+        if(o.getDataDodania().isBefore(this.getDataDodania()))
+            return -1;
         return 0;
     }
 }

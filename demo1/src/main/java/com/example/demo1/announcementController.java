@@ -37,7 +37,7 @@ public class announcementController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("announcement.fxml"));
             Stage stage = (Stage) announcementButton.getScene().getWindow();
-
+            stage.setResizable(false);
             stage.setTitle("Ogłoszenia");
             stage.setScene(new Scene(root));
             stage.show();

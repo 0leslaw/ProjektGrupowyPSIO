@@ -11,12 +11,11 @@ public class Student extends Uzytkownik{
     String kierunek;
     int liczba_nowych_powiadomien;
 
-    public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek, int liczba_nowych_powiadomien) {
+    public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);
         this.semestr = semestr;
         this.nr_indeksu = nr_indeksu;
         this.kierunek = kierunek;
-        this.liczba_nowych_powiadomien = liczba_nowych_powiadomien;
     }
 
     public int getSemestr() {

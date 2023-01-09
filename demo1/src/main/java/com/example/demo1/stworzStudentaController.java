@@ -67,7 +67,8 @@ public class stworzStudentaController implements Initializable {
 
     // trzeba dodac kursy w osobnym stag'u/fxmlu oraz zapisac je do pliku
     public void dodajStudentaButtonOnAction(){ // chyba ze przydzielamy studentowi jakos losowo kursy z pliku
-        Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText(), 0);
+        //czy wszystkie pola pelne
+        Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText());
         // dodawanie kursow
         // serializacja studenta
     }
