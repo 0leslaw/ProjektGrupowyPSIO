@@ -1,6 +1,6 @@
 package PakietKursy;
 
-import PakietProjektowy.Pracownik;
+import Uzytkownicy.Pracownik;
 import Ocena.*;
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
 package com.example.demo1;
 
-import PakietProjektowy.Samorzad;
+import Uzytkownicy.Samorzad;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

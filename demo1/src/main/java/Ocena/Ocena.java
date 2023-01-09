@@ -1,6 +1,6 @@
 package Ocena;
 
-import PakietProjektowy.Student;
+import Uzytkownicy.Student;
 
 public class Ocena {
     private Student student;

@@ -1,7 +1,7 @@
 package com.example.demo1;
 
 import Dane.Dane;
-import PakietProjektowy.Uzytkownik;
+import Uzytkownicy.Uzytkownik;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,4 +1,4 @@
-package PakietProjektowy;
+package Uzytkownicy;
 
 import java.io.Serializable;
 

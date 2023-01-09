@@ -1,4 +1,4 @@
-package PakietProjektowy;
+package Uzytkownicy;
 
 public abstract class Uzytkownik extends Osoba {
 

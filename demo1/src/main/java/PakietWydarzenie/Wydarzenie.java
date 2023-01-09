@@ -1,6 +1,6 @@
 package PakietWydarzenie;
-import PakietProjektowy.Uzytkownik;
-import java.time.LocalDate;
+import Uzytkownicy.Uzytkownik;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

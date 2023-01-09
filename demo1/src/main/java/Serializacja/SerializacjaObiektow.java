@@ -1,13 +1,12 @@
 package Serializacja;
 
 import PakietKursy.Kursy;
-import PakietProjektowy.Osoba;
-import PakietProjektowy.Student;
-import PakietProjektowy.Uzytkownik;
+import Uzytkownicy.Osoba;
+import Uzytkownicy.Student;
+import Uzytkownicy.Uzytkownik;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SerializacjaObiektow {
 //Odczyt i zapis arraylist

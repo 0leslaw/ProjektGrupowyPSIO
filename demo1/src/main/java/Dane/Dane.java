@@ -4,10 +4,10 @@ import Menu.Danie;
 import Menu.Menu;
 import Obserwowani.Kalendarz;
 import Ogłoszenia.Ogloszenie;
-import PakietProjektowy.Pracownik;
-import PakietProjektowy.Samorzad;
-import PakietProjektowy.Student;
-import PakietProjektowy.Uzytkownik;
+import Uzytkownicy.Pracownik;
+import Uzytkownicy.Samorzad;
+import Uzytkownicy.Student;
+import Uzytkownicy.Uzytkownik;
 import PakietWydarzenie.Wydarzenie;
 
 import java.time.LocalDateTime;

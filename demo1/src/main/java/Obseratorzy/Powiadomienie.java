@@ -1,8 +1,7 @@
 package Obseratorzy;
 
 import Obserwowani.Obserwowany;
-import PakietProjektowy.Osoba;
-import PakietProjektowy.Student;
+import Uzytkownicy.Student;
 import PakietWydarzenie.Wydarzenie;
 import Serializacja.SerializacjaObiektow;
 
