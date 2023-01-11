@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
     //można wykorzystać strategie do wyszukiwania ocen po prowadzących lub kursach
     
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args){
         launch();
     }
 }

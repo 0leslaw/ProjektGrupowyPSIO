@@ -12,14 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import Dane.*;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
