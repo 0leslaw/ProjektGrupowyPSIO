@@ -30,6 +30,7 @@
       <Label alignment="CENTER" layoutX="366.0" layoutY="172.0" prefHeight="17.0" prefWidth="98.0" text="Numer Indeksu" />
       <Label alignment="CENTER" layoutX="389.0" layoutY="222.0" prefHeight="17.0" prefWidth="51.0" text="Kierunek" />
       <Label alignment="CENTER" layoutX="150.0" layoutY="172.0" prefHeight="17.0" prefWidth="60.0" text="Nazwisko" />
-      <Button fx:id="dodajStudentaButton" layoutX="276.0" layoutY="335.0" mnemonicParsing="false" onAction="#dodajStudentaButtonOnAction" prefHeight="34.0" prefWidth="60.0" text="Dodaj" />
+      <Button fx:id="dodajStudentaButton" layoutX="276.0" layoutY="329.0" mnemonicParsing="false" onAction="#dodajStudentaButtonOnAction" prefHeight="34.0" prefWidth="60.0" text="Dodaj" />
+      <Label fx:id="uwaga" layoutX="209.0" layoutY="369.0" prefHeight="17.0" prefWidth="195.0" text="Label" visible="false" />
    </children>
 </AnchorPane>

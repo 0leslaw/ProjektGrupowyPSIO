@@ -1,10 +1,14 @@
 package com.example.demo1;
 
+import Uzytkownicy.Student;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import Dane.*;
 
 public class HelloApplication extends Application {
     @Override
@@ -21,7 +25,7 @@ public class HelloApplication extends Application {
     //dodać przycisk wyloguj cofania przy logowaniu
     //dodać przycisk wyloguj w main panelu
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         launch();
     }
 }

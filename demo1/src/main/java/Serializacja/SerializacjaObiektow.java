@@ -59,19 +59,19 @@ public class SerializacjaObiektow {
         }
     }
 
-    public static ArrayList<Student> odczytStudentow(String nazwaPl)throws IOException,ClassNotFoundException{
+    public static ArrayList<Student> odczytStudentow()throws IOException,ClassNotFoundException{
 
         ObjectInputStream pl2 = null;
-        ArrayList<Student> lista_osob = null;
+        ArrayList<Student> lista_osob = new ArrayList<>();
         try{
-            pl2 = new ObjectInputStream(new FileInputStream(nazwaPl));
-            lista_osob = (ArrayList<Student>) pl2.readObject();
+            if(new File("PlikStudentow.ser").length() >0) {
+                pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.ser"));
+                lista_osob.addAll((ArrayList<Student>) pl2.readObject());
+            }
 
 
 
-        } catch (EOFException ex) {
-//            System.out.println("Koniec pliku");
-        }
+        } catch (EOFException ex) {}
 
         finally{
             if(pl2!=null)

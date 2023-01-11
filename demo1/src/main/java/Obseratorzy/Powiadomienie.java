@@ -24,7 +24,7 @@ public class Powiadomienie implements Obserwator{
     public void wyslijPowiadomienie() throws IOException, ClassNotFoundException {
         // napisac metode wysylajaca powiadomienie
         ArrayList<Student> lista_studentow = null;
-        lista_studentow = SerializacjaObiektow.odczytStudentow("plikStudentow.ser");
+        lista_studentow = SerializacjaObiektow.odczytStudentow();
 
         for(int i = 0; i< lista_studentow.size(); i++) {
             wyslijEmail(lista_studentow.get(i).getEmail());

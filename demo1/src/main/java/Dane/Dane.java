@@ -10,6 +10,7 @@ import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
 import PakietWydarzenie.Wydarzenie;
 
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -64,5 +65,38 @@ public class Dane {
         wydarzenia.add(wydarzenie4);
         Kalendarz kalendarz = new Kalendarz(wydarzenia);
         return kalendarz.stworzListeWydarzenNaDzien(dzien.plusDays(7*przesuniecie), od_pon);
+    }
+
+    public static ArrayList<Student> odczytStudentow()throws IOException,ClassNotFoundException{
+
+        ObjectInputStream pl2 = null;
+        ArrayList<Student> lista_osob = new ArrayList<>();
+        try{
+            pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.ser"));
+            lista_osob.addAll((ArrayList<Student>) pl2.readObject());
+        } catch (EOFException ex) {}
+        finally{
+            if(pl2!=null)
+                pl2.close();
+        }
+        return lista_osob;
+    }
+
+    public static void zapisStudentow(ArrayList<Student> lista_osob)throws IOException {
+        ObjectOutputStream pl = null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream("PlikStudentow.ser"));
+            pl.writeObject(lista_osob);
+            pl.flush();
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
+
+    public static void czystka_Studentow() throws IOException, ClassNotFoundException {
+        odczytStudentow();
+        zapisStudentow(new ArrayList<Student>());
     }
 }
