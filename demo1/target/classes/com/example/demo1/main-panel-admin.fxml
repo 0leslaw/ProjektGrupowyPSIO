@@ -23,5 +23,10 @@
             <Font name="Consolas" size="16.0" />
          </font>
       </Button>
+      <Button fx:id="usunStudenta" layoutX="332.0" layoutY="237.0" mnemonicParsing="false" onAction="#toUsunStudenta" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń studenta" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

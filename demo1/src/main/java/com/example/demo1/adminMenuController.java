@@ -23,6 +23,9 @@ public class adminMenuController {
     private Button returnButton;
 
     @FXML
+    private Button usunStudenta;
+
+    @FXML
     public void returnButtonAction() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login-choice.fxml"));
@@ -49,5 +52,10 @@ public class adminMenuController {
     public void toDodajSamorzad(){
         stworzSamorzadController controller = new stworzSamorzadController();
         controller.stworzSamorzad(dodajSamorzad);
+    }
+
+    public void toUsunStudenta(){
+        usunStudentaController controller = new usunStudentaController();
+        controller.usunStudenta(usunStudenta);
     }
 }

@@ -44,8 +44,7 @@ public class studentLoginController {
                     stage.setScene(new Scene(root1));
                     stage.show();
                 } catch(Exception e) {
-                    System.out.println("Nie można załadować panelu głównego");
-                    e.printStackTrace();
+//                    System.out.println("Nie można załadować panelu głównego");
                 }
              }
             else label.setVisible(true);
