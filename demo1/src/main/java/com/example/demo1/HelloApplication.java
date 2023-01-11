@@ -1,5 +1,9 @@
 package com.example.demo1;
 
+import Dane.Dane;
+import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Student;
+import Uzytkownicy.Uzytkownik;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +23,8 @@ public class HelloApplication extends Application {
 
     //można wykorzystać strategie do wyszukiwania ocen po prowadzących lub kursach
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         launch();
+
     }
 }
