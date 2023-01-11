@@ -72,7 +72,7 @@ public class Dane {
         ObjectInputStream pl2 = null;
         ArrayList<Student> lista_osob = new ArrayList<>();
         try{
-            pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.ser"));
+            pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.txt"));
             lista_osob.addAll((ArrayList<Student>) pl2.readObject());
         } catch (EOFException ex) {}
         finally{
@@ -85,7 +85,7 @@ public class Dane {
     public static void zapisStudentow(ArrayList<Student> lista_osob)throws IOException {
         ObjectOutputStream pl = null;
         try{
-            pl=new ObjectOutputStream(new FileOutputStream("PlikStudentow.ser"));
+            pl=new ObjectOutputStream(new FileOutputStream("PlikStudentow.txt"));
             pl.writeObject(lista_osob);
             pl.flush();
         }
