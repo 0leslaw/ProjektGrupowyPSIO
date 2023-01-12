@@ -2,7 +2,7 @@ package Uzytkownicy;
 
 import java.io.Serializable;
 
-public abstract class Osoba implements Serializable {
+public abstract class Osoba extends Object implements Serializable {
     protected String imie;
     protected String drugie_imie;
     protected String nazwisko;

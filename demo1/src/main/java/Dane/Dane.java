@@ -4,6 +4,7 @@ import Menu.Danie;
 import Menu.Menu;
 import Obserwowani.Kalendarz;
 import Ogłoszenia.Ogloszenie;
+import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Pracownik;
 import Uzytkownicy.Samorzad;
 import Uzytkownicy.Student;
@@ -11,6 +12,10 @@ import Uzytkownicy.Uzytkownik;
 import PakietWydarzenie.Wydarzenie;
 
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -72,7 +77,7 @@ public class Dane {
         ObjectInputStream pl2 = null;
         ArrayList<Student> lista_osob = new ArrayList<>();
         try{
-            pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.txt"));
+            pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.ser"));
             lista_osob.addAll((ArrayList<Student>) pl2.readObject());
         } catch (EOFException ex) {}
         finally{
@@ -82,10 +87,10 @@ public class Dane {
         return lista_osob;
     }
 
-    public static void zapisStudentow(ArrayList<Student> lista_osob)throws IOException {
+    public static void zapisStudentow(ArrayList<Student> lista_osob) throws IOException{
         ObjectOutputStream pl = null;
         try{
-            pl=new ObjectOutputStream(new FileOutputStream("PlikStudentow.txt"));
+            pl=new ObjectOutputStream(new FileOutputStream("https://github.com/zawodev/ursus2-0/blob/00bb410ef65fbbaef48b35988475b372255f27c8/demo1/PlikStudentow.ser"));
             pl.writeObject(lista_osob);
             pl.flush();
         }
@@ -95,8 +100,9 @@ public class Dane {
         }
     }
 
-    public static void czystka_Studentow() throws IOException, ClassNotFoundException {
+    public static void czystka_Studentow() throws IOException, ClassNotFoundException, URISyntaxException {
         odczytStudentow();
         zapisStudentow(new ArrayList<Student>());
     }
+
 }

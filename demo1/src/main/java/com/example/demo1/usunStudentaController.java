@@ -13,6 +13,7 @@ import Dane.*;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class usunStudentaController {
@@ -53,7 +54,7 @@ public class usunStudentaController {
         }
     }
 
-    public void usunStudenta() throws IOException, ClassNotFoundException {
+    public void usunStudenta() throws IOException, ClassNotFoundException{
         uwaga.setVisible(false);
         ArrayList<Student> listaStudentow = Dane.odczytStudentow();
         int dlugosc = listaStudentow.size();
@@ -62,6 +63,7 @@ public class usunStudentaController {
                 listaStudentow.remove(i);
                 uwaga.setText("Pomyślnie usunięto studenta");
                 uwaga.setVisible(true);
+                usunietyIndeks.clear();
             }
         }
         if(listaStudentow.size() == dlugosc){
