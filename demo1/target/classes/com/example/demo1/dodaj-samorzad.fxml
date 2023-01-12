@@ -4,10 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.stworzSamorzadController">
    <children>
-      <Button fx:id="returnButton" layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#returnToMenu" text="Powrot" />
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrot" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
       <TextField fx:id="imie" layoutX="120.0" layoutY="91.0" />
       <TextField fx:id="drugie_imie" layoutX="120.0" layoutY="147.0" />
       <TextField fx:id="nazwisko" layoutX="120.0" layoutY="199.0" />
@@ -20,6 +24,9 @@
       <Label alignment="CENTER" layoutX="379.0" layoutY="124.0" text="Login" />
       <TextField fx:id="haslo" layoutX="318.0" layoutY="199.0" />
       <Label alignment="CENTER" layoutX="379.0" layoutY="182.0" text="Hasło" />
-      <Button fx:id="dodajSamorzadButton" layoutX="270.0" layoutY="261.0" mnemonicParsing="false" onAction="#dodajSamorzadButtonOnAction" prefHeight="34.0" prefWidth="60.0" text="Dodaj" />
+      <Button fx:id="dodajSamorzadButton" layoutX="250.0" layoutY="250.0" mnemonicParsing="false" onAction="#dodajSamorzadButtonOnAction" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #0000bb;" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

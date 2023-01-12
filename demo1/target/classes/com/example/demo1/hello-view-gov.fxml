@@ -12,7 +12,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffeacc;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="loginButton" layoutX="237.0" layoutY="275.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: #5070cc;" text="Zaloguj" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="240.0" layoutY="280.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #5070cc;" text="Zaloguj" textFill="WHITE">
                <font>
                   <Font name="Consolas" size="19.0" />
                </font></Button>

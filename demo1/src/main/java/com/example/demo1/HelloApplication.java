@@ -1,9 +1,5 @@
 package com.example.demo1;
 
-import Dane.Dane;
-import Serializacja.SerializacjaObiektow;
-import Uzytkownicy.Student;
-import Uzytkownicy.Uzytkownik;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

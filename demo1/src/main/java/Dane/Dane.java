@@ -90,7 +90,7 @@ public class Dane {
     public static void zapisStudentow(ArrayList<Student> lista_osob) throws IOException{
         ObjectOutputStream pl = null;
         try{
-            pl=new ObjectOutputStream(new FileOutputStream("https://github.com/zawodev/ursus2-0/blob/00bb410ef65fbbaef48b35988475b372255f27c8/demo1/PlikStudentow.ser"));
+            pl=new ObjectOutputStream(new FileOutputStream("PlikStudentow.ser"));
             pl.writeObject(lista_osob);
             pl.flush();
         }
