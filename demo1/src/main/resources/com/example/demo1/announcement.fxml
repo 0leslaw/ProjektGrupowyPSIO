@@ -12,7 +12,7 @@
    <children>
       <ScrollPane prefHeight="400.0" prefWidth="600.0">
          <content>
-            <VBox fx:id="ogloszeniaBox" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" prefHeight="501.0" prefWidth="583.0">
+            <VBox fx:id="ogloszeniaBox" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" prefHeight="501.0" prefWidth="583.0" style="-fx-background-color: #ffeacc;">
                <children>
                   <Label alignment="CENTER" prefHeight="61.0" prefWidth="615.0" text="Ogłoszenia">
                      <font>
