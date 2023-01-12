@@ -20,7 +20,7 @@
             <TextField fx:id="loginTF" layoutX="225.0" layoutY="155.0" />
             <PasswordField fx:id="passwordTF" layoutX="225.0" layoutY="225.0" />
             <Label fx:id="label" alignment="CENTER" layoutX="194.0" layoutY="325.0" prefHeight="46.0" prefWidth="212.0" text="Niepoprawne dane logowania" textFill="#fc0707" visible="false" />
-            <Button fx:id="returnButton" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
+            <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
                <font>
                   <Font name="Consolas" size="16.0" />
                </font>
