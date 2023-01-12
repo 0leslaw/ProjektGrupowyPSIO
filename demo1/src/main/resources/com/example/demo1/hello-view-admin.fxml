@@ -9,26 +9,26 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.adminLoginController">
    <children>
-      <Text layoutX="216.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logowanie" wrappingWidth="168.1939697265625">
+      <Text layoutX="200.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logowanie" textAlignment="CENTER" wrappingWidth="200.0">
          <font>
-            <Font name="Consolas" size="33.0" />
+            <Font name="Consolas" size="36.0" />
          </font>
       </Text>
-      <Text layoutX="278.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+      <Text layoutX="270.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" wrappingWidth="60.0">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Text>
-      <TextField layoutX="225.0" layoutY="157.0" />
-      <Text layoutX="277.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło">
+      <TextField layoutX="225.0" layoutY="155.0" />
+      <Text layoutX="270.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło" textAlignment="CENTER" wrappingWidth="60.0">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Text>
-      <PasswordField fx:id="passwordTF" layoutX="225.0" layoutY="224.0" />
-      <Button fx:id="loginButton" layoutX="239.0" layoutY="272.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #5070cc;" text="Zaloguj" textFill="WHITE">
+      <PasswordField fx:id="passwordTF" layoutX="225.0" layoutY="225.0" />
+      <Button fx:id="loginButton" layoutX="240.0" layoutY="280.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #5070cc;" text="Zaloguj" textFill="WHITE">
          <font>
             <Font name="Consolas" size="18.0" />
          </font></Button>
-      <Button fx:id="returnButton" layoutX="22.0" layoutY="21.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>
