@@ -6,11 +6,12 @@ import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
 
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class SerializacjaObiektow {
 
-    public static <T> ArrayList<T> odczytDowolnejArrayListy(T[] o,String nazwapliku) throws IOException, ClassNotFoundException {
+    public static <T> ArrayList<T> odczytDowolnejArrayListy(String nazwapliku) throws IOException, ClassNotFoundException {
         ObjectInputStream pl2=null;
         ArrayList<T> lista_T = null;
         try{
