@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.stworzStudentaController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.stworzStudentaController">
    <children>
       <TextField fx:id="imie" layoutX="110.0" layoutY="81.0" />
       <TextField fx:id="drugie_imie" layoutX="110.0" layoutY="137.0" />
@@ -17,7 +17,7 @@
       <TextField fx:id="semestr" layoutX="340.0" layoutY="137.0" />
       <TextField fx:id="numer_indeksu" layoutX="340.0" layoutY="189.0" />
       <TextField fx:id="kierunek" layoutX="340.0" layoutY="239.0" />
-      <Button fx:id="returnButton" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrot" textFill="WHITE">
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrot" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
@@ -30,6 +30,10 @@
       <Label alignment="CENTER" layoutX="366.0" layoutY="172.0" prefHeight="17.0" prefWidth="98.0" text="Numer Indeksu" />
       <Label alignment="CENTER" layoutX="389.0" layoutY="222.0" prefHeight="17.0" prefWidth="51.0" text="Kierunek" />
       <Label alignment="CENTER" layoutX="150.0" layoutY="172.0" prefHeight="17.0" prefWidth="60.0" text="Nazwisko" />
-      <Button fx:id="dodajStudentaButton" layoutX="276.0" layoutY="335.0" mnemonicParsing="false" onAction="#dodajStudentaButtonOnAction" prefHeight="34.0" prefWidth="60.0" text="Dodaj" />
+      <Button fx:id="dodajStudentaButton" layoutX="250.0" layoutY="340.0" mnemonicParsing="false" onAction="#dodajStudentaButtonOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #0000bb;" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font></Button>
+      <Label fx:id="uwaga" layoutX="209.0" layoutY="369.0" prefHeight="17.0" prefWidth="195.0" text="Label" visible="false" />
    </children>
 </AnchorPane>

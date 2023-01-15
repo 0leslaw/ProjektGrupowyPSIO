@@ -1,11 +1,15 @@
 package com.example.demo1;
 
+import Uzytkownicy.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class adminMenuController {
 
@@ -17,6 +21,10 @@ public class adminMenuController {
     private Button dodajSamorzad;
     @FXML
     private Button returnButton;
+
+    @FXML
+    private Button usunStudenta;
+
     @FXML
     public void returnButtonAction() {
         try {
@@ -44,5 +52,10 @@ public class adminMenuController {
     public void toDodajSamorzad(){
         stworzSamorzadController controller = new stworzSamorzadController();
         controller.stworzSamorzad(dodajSamorzad);
+    }
+
+    public void toUsunStudenta(){
+        usunStudentaController controller = new usunStudentaController();
+        controller.usunStudenta(usunStudenta);
     }
 }

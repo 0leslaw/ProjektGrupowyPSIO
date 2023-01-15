@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.calendarController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.calendarController">
    <children>
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
          <font>
@@ -407,7 +407,13 @@
             <Insets right="10.0" />
          </padding>
       </GridPane>
-      <Button layoutX="320.0" layoutY="21.0" mnemonicParsing="false" onAction="#LastWeek" prefHeight="26.0" prefWidth="127.0" text="Poprzedni tydzień" />
-      <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#NextWeek" prefHeight="26.0" prefWidth="127.0" text="Następny tydzień" />
+      <Button layoutX="312.0" layoutY="21.0" mnemonicParsing="false" onAction="#LastWeek" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #0000dd;" text="Poprzedni tydzień" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Button>
+      <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#NextWeek" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #0000dd;" text="Następny tydzień" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

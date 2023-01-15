@@ -6,9 +6,42 @@ import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
 
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class SerializacjaObiektow {
+
+    public static <T> ArrayList<T> odczytDowolnejArrayListy(String nazwapliku) throws IOException, ClassNotFoundException {
+        ObjectInputStream pl2=null;
+        ArrayList<T> lista_T = null;
+        try{
+            pl2=new ObjectInputStream(new FileInputStream(nazwapliku));
+            lista_T=(ArrayList<T>) pl2.readObject();
+
+        } catch (EOFException ex) {
+//            System.out.println("Koniec pliku");
+        }
+
+        finally{
+            if(pl2!=null)
+                pl2.close();
+        }
+        return lista_T;
+    }
+
+    public static <T> void zapisDowolnejArrayListy(ArrayList<T> lista_T, String nazwapliku)throws IOException {
+        ObjectOutputStream pl=null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
+            pl.writeObject(lista_T);
+            pl.flush();
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
+
 //Odczyt i zapis arraylist
 
     //osob
@@ -59,19 +92,17 @@ public class SerializacjaObiektow {
         }
     }
 
-    public static ArrayList<Student> odczytStudentow(String nazwaPl)throws IOException,ClassNotFoundException{
+    public static ArrayList<Student> odczytStudentow()throws IOException,ClassNotFoundException{
 
         ObjectInputStream pl2 = null;
-        ArrayList<Student> lista_osob = null;
+        ArrayList<Student> lista_osob = new ArrayList<>();
         try{
-            pl2 = new ObjectInputStream(new FileInputStream(nazwaPl));
-            lista_osob = (ArrayList<Student>) pl2.readObject();
+            if(new File("PlikStudentow.ser").length() >0) {
+                pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.ser"));
+                lista_osob.addAll((ArrayList<Student>) pl2.readObject());
+            }
 
-
-
-        } catch (EOFException ex) {
-//            System.out.println("Koniec pliku");
-        }
+        } catch (EOFException ex) {}
 
         finally{
             if(pl2!=null)
@@ -135,31 +166,5 @@ public class SerializacjaObiektow {
         for(int i=0;i< lista_osob.size();i++)
             System.out.println(lista_osob.get(i).toString()+"\n");
     }
-//logowanie
-    public static boolean sprawdzPoprawnoscLoginu(String nazwa_pliku,String login) throws IOException, ClassNotFoundException {
-
-        ArrayList<Uzytkownik> lista_osob = odczytUzytkownikow(nazwa_pliku);
-
-        boolean czy_poprawny_login = false;
-        for (int i = 0; i < lista_osob.size(); i++) {
-            if ((lista_osob.get(i).getLogin()).equals(login))
-                czy_poprawny_login = true;
-        }
-        return czy_poprawny_login;
-    }
-
-    public static boolean sprawdzPoprawnoscHasla(String nazwa_pliku,String haslo) throws IOException, ClassNotFoundException {
-
-        ArrayList<Uzytkownik> lista_osob = odczytUzytkownikow(nazwa_pliku);
-
-        boolean czy_poprawne_haslo = false;
-        for(int i=0; i<lista_osob.size(); i++)
-            if((lista_osob.get(i).getHaslo()).equals(haslo))
-                czy_poprawne_haslo = true;
-
-        return czy_poprawne_haslo;
-    }
-
-
 
 }

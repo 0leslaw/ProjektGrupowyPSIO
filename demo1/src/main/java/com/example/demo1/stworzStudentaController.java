@@ -4,13 +4,21 @@ import Uzytkownicy.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import Dane.*;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class stworzStudentaController implements Initializable {
@@ -49,6 +57,9 @@ public class stworzStudentaController implements Initializable {
     private Button dodajStudentaButton;
 
     @FXML
+    private Label uwaga;
+
+    @FXML
     public void stworzStudenta(Button studentButton)
     {
         try {
@@ -64,10 +75,33 @@ public class stworzStudentaController implements Initializable {
     }
 
     // trzeba dodac kursy w osobnym stag'u/fxmlu oraz zapisac je do pliku
-    public void dodajStudentaButtonOnAction(){ // chyba ze przydzielamy studentowi jakos losowo kursy z pliku
-        //czy wszystkie pola pelne
-        Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText());
+    public void dodajStudentaButtonOnAction() throws IOException, ClassNotFoundException{ // chyba ze przydzielamy studentowi jakos losowo kursy z pliku
+        if(imie.getText().length() != 0 && nazwisko.getText().length() != 0 && email.getText().length() != 0 && login.getText().length() != 0 && haslo.getText().length() != 0 && semestr.getText().length() != 0 && numer_indeksu.getText().length() != 0 && kierunek.getText().length() != 0) {
+            ArrayList<Student> listaStudentow = Dane.odczytStudentow();
+            Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText());
+            listaStudentow.add(student);
+            Dane.zapisStudentow(listaStudentow);
+            imie.setText("");
+            drugie_imie.setText("");
+            nazwisko.setText("");
+            email.setText("");
+            login.setText("");
+            haslo.setText("");
+            semestr.setText("");
+            numer_indeksu.setText("");
+            kierunek.setText("");
+            uwaga.setText("Pomyślnie dodano studenta");
+            uwaga.setAlignment(Pos.CENTER);
+            uwaga.setTextAlignment(TextAlignment.CENTER);
+            uwaga.setVisible(true);
+        }else{
+            uwaga.setText("Należy podać wszystkie dane");
+            uwaga.setAlignment(Pos.CENTER);
+            uwaga.setTextAlignment(TextAlignment.CENTER);
+            uwaga.setVisible(true);
+        }
         // dodawanie kursow
+
         // serializacja studenta
     }
 
