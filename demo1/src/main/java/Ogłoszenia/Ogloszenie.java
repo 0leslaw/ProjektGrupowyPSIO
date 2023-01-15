@@ -1,8 +1,9 @@
 package Ogłoszenia;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Ogloszenie implements Comparable<Ogloszenie>{
+public class Ogloszenie implements Comparable<Ogloszenie>, Serializable{
 
     private String autor;
 
