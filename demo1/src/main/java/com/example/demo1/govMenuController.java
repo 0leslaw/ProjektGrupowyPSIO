@@ -18,9 +18,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class govMenuController {
+public class govMenuController implements Initializable {
     @FXML
     private Button returnButton;
+
+    @FXML
+    private Button ogloszenieButton;
+
+    public void ogloszenieButtonAction(){
+        dodajOgloszenieController controller = new dodajOgloszenieController();
+        controller.ogloszenieController(ogloszenieButton);
+    }
     @FXML
     public void returnButtonAction() {
         try {
@@ -33,5 +41,10 @@ public class govMenuController {
         } catch(Exception e) {
             System.out.println("Nie moża załadować panelu głównego");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

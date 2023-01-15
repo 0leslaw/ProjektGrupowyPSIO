@@ -1,5 +1,6 @@
 package Serializacja;
 
+import Ogłoszenia.Ogloszenie;
 import PakietKursy.Kursy;
 import Uzytkownicy.Osoba;
 import Uzytkownicy.Student;
@@ -10,6 +11,22 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class SerializacjaObiektow {
+
+    //Odczyt i zapis arraylist
+
+    public static void serializacjaOgloszen(Ogloszenie ogloszenie, String nazwapliku) throws IOException{
+        ObjectOutputStream pl=null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
+            pl.writeObject(ogloszenie);
+            pl.flush();
+            System.out.println("Poprawny zapis");
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
 
     public static <T> ArrayList<T> odczytDowolnejArrayListy(String nazwapliku) throws IOException, ClassNotFoundException {
         ObjectInputStream pl2=null;
@@ -42,9 +59,6 @@ public class SerializacjaObiektow {
         }
     }
 
-//Odczyt i zapis arraylist
-
-    //osob
     public static void zapisUzytkownikow(ArrayList<Uzytkownik> lista_osob, String nazwapliku)throws IOException {
         ObjectOutputStream pl=null;
         try{
