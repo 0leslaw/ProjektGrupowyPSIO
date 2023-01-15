@@ -24,10 +24,16 @@ public class govMenuController implements Initializable {
 
     @FXML
     private Button ogloszenieButton;
+    @FXML
+    private Button wydarzenieButton;
 
     public void ogloszenieButtonAction(){
         dodajOgloszenieController controller = new dodajOgloszenieController();
         controller.ogloszenieController(ogloszenieButton);
+    }
+    public void wydarzenieButtonAction(){
+        dodajWydarzenieController controller = new dodajWydarzenieController();
+        controller.wydarzenieController(wydarzenieButton);
     }
     @FXML
     public void returnButtonAction() {

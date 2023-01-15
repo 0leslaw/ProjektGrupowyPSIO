@@ -25,7 +25,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="319.0" layoutY="166.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Dodaj Wydarzenie" textFill="WHITE">
+            <Button fx:id="wydarzenieButton" layoutX="319.0" layoutY="166.0" mnemonicParsing="false" onAction="#wydarzenieButtonAction" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Dodaj Wydarzenie" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

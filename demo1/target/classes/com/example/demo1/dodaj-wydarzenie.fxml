@@ -6,32 +6,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.dodajOgloszenieController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.dodajWydarzenieController">
    <children>
-      <Label layoutX="189.0" layoutY="24.0" text="Dodaj ogłoszenie">
+      <Label layoutX="189.0" layoutY="24.0" text="Dodaj wydarzenie">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
       <TextField fx:id="autor" layoutX="35.0" layoutY="126.0" />
-      <Label alignment="CENTER" layoutX="83.0" layoutY="98.0" prefHeight="26.0" prefWidth="54.0" text="Autor">
+      <Label alignment="CENTER" layoutX="35.0" layoutY="98.0" prefHeight="26.0" prefWidth="150.0" text="Dane 1">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <Label layoutX="88.0" layoutY="200.0" text="Tytuł">
+      <Label alignment="CENTER" layoutX="35.0" layoutY="200.0" prefHeight="18.0" prefWidth="150.0" text="Dane 2" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
       <TextField fx:id="tytul" layoutX="36.0" layoutY="224.0" />
-      <Label layoutX="380.0" layoutY="102.0" text="Treść">
+      <Label layoutX="380.0" layoutY="102.0" text="Dane 3">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <TextField fx:id="tresc" layoutX="217.0" layoutY="126.0" prefHeight="192.0" prefWidth="369.0" />
-      <Button fx:id="dodajButton" layoutX="250.0" layoutY="342.0" mnemonicParsing="false" onAction="#dodajButtonAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #5070cc;" text="Dodaj" textFill="WHITE">
-         <font>
-            <Font name="Consolas" size="18.0" />
-         </font></Button>
+      <TextField fx:id="tresc" layoutX="217.0" layoutY="126.0" prefHeight="218.0" prefWidth="370.0" />
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
@@ -41,5 +37,11 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Label alignment="CENTER" layoutX="34.0" layoutY="294.0" prefHeight="18.0" prefWidth="150.0" text="Dane 3" textAlignment="CENTER">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tytul1" layoutX="35.0" layoutY="318.0" />
    </children>
 </AnchorPane>
