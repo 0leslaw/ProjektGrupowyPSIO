@@ -20,7 +20,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="47.0" layoutY="283.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Dodaj Posiłek" textFill="WHITE">
+            <Button fx:id="posilekButton" layoutX="47.0" layoutY="283.0" mnemonicParsing="false" onAction="#posilekButtonAction" prefHeight="56.0" prefWidth="234.0" style="-fx-background-color: #5070cc;" text="Dodaj Posiłek" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
