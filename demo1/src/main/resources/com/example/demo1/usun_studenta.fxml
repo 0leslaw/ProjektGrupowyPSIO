@@ -18,84 +18,15 @@
                <Font name="Consolas" size="16.0" />
            </font>
        </Button>
-      <TextField fx:id="usunietyIndeks" layoutX="384.0" layoutY="23.0" prefHeight="26.0" prefWidth="103.0" promptText="numer indeksu" />
+      <TextField fx:id="szukanyIndeks" layoutX="384.0" layoutY="23.0" prefHeight="26.0" prefWidth="103.0" promptText="numer indeksu" />
       <Label fx:id="uwaga" alignment="CENTER" layoutX="193.0" layoutY="339.0" prefHeight="17.0" prefWidth="213.0" text="Pomyślnie usunięto studenta" visible="false" />
-      <TextField layoutX="139.0" layoutY="22.0" prefHeight="26.0" prefWidth="103.0" promptText="imię" />
-      <TextField layoutX="260.0" layoutY="23.0" prefHeight="26.0" prefWidth="103.0" promptText="nazwisko" />
-      <Button layoutX="504.0" layoutY="23.0" mnemonicParsing="false" text="Szukaj" />
+      <TextField fx:id="szukaneImie" layoutX="139.0" layoutY="22.0" prefHeight="26.0" prefWidth="103.0" promptText="imię" />
+      <TextField fx:id="szukaneNazwisko" layoutX="260.0" layoutY="23.0" prefHeight="26.0" prefWidth="103.0" promptText="nazwisko" />
+      <Button fx:id="szukaj" layoutX="504.0" layoutY="23.0" mnemonicParsing="false" text="Szukaj" onAction="#szukajAction"/>
       <ScrollPane layoutX="-1.0" layoutY="64.0" prefHeight="335.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;">
          <content>
             <VBox fx:id="studenciBox" prefHeight="334.0" prefWidth="583.0" style="-fx-background-color: #ffeacc;">
                <children>
-                  <HBox prefHeight="35.0" prefWidth="598.0" style="-fx-border-color: black;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="113.21630859375">
-                           <HBox.margin>
-                              <Insets left="10.0" top="8.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="137.21630859375">
-                           <HBox.margin>
-                              <Insets top="8.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.21630859375">
-                           <HBox.margin>
-                              <Insets top="8.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Button fx:id="usuwanieStudenta" mnemonicParsing="false" onAction="#usunStudenta" prefHeight="12.0" prefWidth="109.0" style="-fx-background-color: #0000bb;" text="Usuń" textFill="WHITE">
-                           <font>
-                              <Font name="Consolas" size="14.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets top="2.0" />
-                           </HBox.margin>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Button>
-                     </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </HBox>
-                  <HBox layoutX="15.0" layoutY="10.0" prefHeight="35.0" prefWidth="598.0" style="-fx-border-color: black;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="113.21630859375">
-                           <HBox.margin>
-                              <Insets left="10.0" top="8.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="137.21630859375">
-                           <HBox.margin>
-                              <Insets top="8.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.21630859375">
-                           <HBox.margin>
-                              <Insets top="8.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Button fx:id="usuwanieStudenta1" mnemonicParsing="false" onAction="#usunStudenta" prefHeight="12.0" prefWidth="109.0" style="-fx-background-color: #0000bb;" text="Usuń" textFill="WHITE">
-                           <font>
-                              <Font name="Consolas" size="14.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets top="2.0" />
-                           </HBox.margin>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Button>
-                     </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </HBox>
                </children>
                <padding>
                   <Insets left="5.0" right="5.0" />

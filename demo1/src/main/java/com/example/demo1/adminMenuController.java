@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import Dane.*;
 
 import java.util.ArrayList;
 
@@ -56,6 +57,9 @@ public class adminMenuController {
 
     public void toUsunStudenta(){
         usunStudentaController controller = new usunStudentaController();
+        usuwaniePomoc.setIndeks("");
+        usuwaniePomoc.setImie("");
+        usuwaniePomoc.setNazwisko("");
         controller.usunStudenta(usunStudenta);
     }
 }
