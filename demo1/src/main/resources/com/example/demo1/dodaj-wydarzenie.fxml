@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.dodajWydarzenieController">
    <children>
-      <Label layoutX="189.0" layoutY="24.0" text="Dodaj wydarzenie">
+      <Label alignment="CENTER" layoutX="186.0" layoutY="32.0" text="Dodaj wydarzenie">
          <font>
             <Font size="29.0" />
          </font>
@@ -18,16 +18,16 @@
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="35.0" layoutY="200.0" prefHeight="18.0" prefWidth="150.0" text="Dane 2" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="175.0" prefHeight="18.0" prefWidth="150.0" text="Dane 2" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <TextField fx:id="tytul" layoutX="36.0" layoutY="224.0" />
+      <TextField fx:id="tytul" layoutX="35.0" layoutY="199.0" />
       <Label layoutX="380.0" layoutY="102.0" text="Dane 3">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <TextField fx:id="tresc" layoutX="217.0" layoutY="126.0" prefHeight="218.0" prefWidth="370.0" />
+      <TextField fx:id="tresc" layoutX="217.0" layoutY="126.0" prefHeight="170.0" prefWidth="370.0" />
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
@@ -37,11 +37,16 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="34.0" layoutY="294.0" prefHeight="18.0" prefWidth="150.0" text="Dane 3" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="246.0" prefHeight="18.0" prefWidth="150.0" text="Dane 3" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tytul1" layoutX="35.0" layoutY="318.0" />
+      <TextField fx:id="tytul1" layoutX="35.0" layoutY="270.0" />
+      <Button fx:id="dodajButton" layoutX="250.0" layoutY="336.0" mnemonicParsing="false" onAction="#dodajButtonAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #5070cc;" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

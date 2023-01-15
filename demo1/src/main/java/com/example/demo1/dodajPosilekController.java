@@ -1,5 +1,7 @@
 package com.example.demo1;
 
+import Ogłoszenia.Ogloszenie;
+import Serializacja.SerializacjaObiektow;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,31 +12,31 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
-public class dodajWydarzenieController implements Initializable {
+public class dodajPosilekController implements Initializable {
     @FXML
     private Button returnButton;
 
     @FXML
-    public void wydarzenieController(Button wydarzenieButton){
+    public void posilekController(Button posilekButton){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("dodaj-wydarzenie.fxml"));
-            Stage stage = (Stage) wydarzenieButton.getScene().getWindow();
-            stage.setTitle("Dodaj wydarzenia");
+            Parent root = FXMLLoader.load(getClass().getResource("dodaj-posilek.fxml"));
+            Stage stage = (Stage) posilekButton.getScene().getWindow();
+            stage.setTitle("Dodaj Posiłki");
             stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();
-            System.out.println("Nie można załadować panelu wydarzen");
+            System.out.println("Nie można załadować panelu posiłków");
         }
     }
 
     @FXML
     public void dodajButtonAction() throws IOException {
-        //dodawanie wydarzen do kalendarza
-        //na inpucie zaimplementowac kalendarz i mozliwosc zaznaczania na nim dni w ktorych cos ma sie dziac
-        //przyciski dodaj usun edytuj na gorze
+        //dodawanie posilku na konkretny dzien lub edycja kalendarza posilkow
+
 
     }
 
