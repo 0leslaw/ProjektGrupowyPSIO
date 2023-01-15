@@ -1,9 +1,8 @@
 package Mapa;
 
 import java.util.ArrayList;
-import java.util.PriorityQueue;
 
-public class Main {
+public class WezlyTworzenie {
 
     private ArrayList<Wezel> zrodlo= new ArrayList<>();
 

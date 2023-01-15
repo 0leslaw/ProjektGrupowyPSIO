@@ -1,6 +1,6 @@
 package com.example.demo1;
 
-import Mapa.Main;
+import Mapa.WezlyTworzenie;
 import Mapa.Wezel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
@@ -73,7 +72,7 @@ public class mapController implements Initializable {
         circle.setVisible(false);
         mapPath.setVisible(false);
         ArrayList<Wezel> droga = new ArrayList<>();
-        Main tmp = new Main();
+        WezlyTworzenie tmp = new WezlyTworzenie();
         droga.addAll(tmp.znajdzDroge(start.getText(), cel.getText()));
         if(droga.size()>0) {
             bladMapa.setOpacity(0.0);

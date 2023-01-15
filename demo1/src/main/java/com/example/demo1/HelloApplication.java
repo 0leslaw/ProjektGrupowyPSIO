@@ -18,9 +18,7 @@ public class HelloApplication extends Application {
     }
 
     //można wykorzystać strategie do wyszukiwania ocen po prowadzących lub kursach
-    //dodać przycisk wyloguj cofania przy logowaniu
-    //dodać przycisk wyloguj w main panelu
-    
+
     public static void main(String[] args) {
         launch();
     }
