@@ -18,16 +18,16 @@
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="35.0" layoutY="200.0" prefHeight="18.0" prefWidth="150.0" text="Cena" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="181.0" prefHeight="18.0" prefWidth="150.0" text="Cena" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <TextField fx:id="tytul" layoutX="36.0" layoutY="224.0" />
+      <TextField fx:id="tytul" layoutX="35.0" layoutY="205.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="102.0" prefHeight="18.0" prefWidth="370.0" text="Opis" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <TextField fx:id="tresc" layoutX="217.0" layoutY="126.0" prefHeight="160.0" prefWidth="370.0" />
+      <TextField fx:id="tresc" layoutX="217.0" layoutY="126.0" prefHeight="180.0" prefWidth="370.0" />
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnButtonAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #d45d45;" text="Powrót" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
@@ -42,5 +42,11 @@
             <Font name="Consolas" size="18.0" />
          </font>
       </Button>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="256.0" prefHeight="18.0" prefWidth="150.0" text="Dzień Tygodnia" textAlignment="CENTER">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tytul1" layoutX="36.0" layoutY="280.0" />
    </children>
 </AnchorPane>

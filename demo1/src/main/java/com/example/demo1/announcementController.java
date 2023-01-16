@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 import Ogłoszenia.Ogloszenie;
+import Serializacja.SerializacjaObiektow;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +17,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import Dane.*;
+import java.io.EOFException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -40,6 +42,7 @@ public class announcementController implements Initializable {
             stage.show();
         } catch(Exception e) {
             System.out.println("Nie można załadować ogłoszeń");
+            e.printStackTrace();
         }
     }
     @FXML
@@ -60,15 +63,27 @@ public class announcementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Ogloszenie> ogloszenia = new ArrayList<>();
-        int size = Dane.stworzOgloszenia().size();
-        PriorityQueue<Ogloszenie> pq = Dane.stworzOgloszenia();
+        int size = 0;
+        PriorityQueue<Ogloszenie> pq = new PriorityQueue<>();
+        ArrayList<Ogloszenie> ogloszeniaPom = new ArrayList<>();
+        try {
+            size = SerializacjaObiektow.odczytOgloszen("PlikOgloszen.ser").size();
+            ogloszeniaPom = SerializacjaObiektow.odczytOgloszen("PlikOgloszen.ser");
+        } catch (EOFException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch(IOException e){}
+        for(Ogloszenie ogloszenie: ogloszeniaPom){
+            pq.add(ogloszenie);
+        }
         for(int i = 0; i<size; i++){
             ogloszenia.add(pq.poll());
         }
         for(int i = 0; i<ogloszenia.size(); i++) {
             Ogloszenie ogloszenie = ogloszenia.get(i);
             VBox box = new VBox();
-            box.setPrefSize(154, 553);
+            box.setPrefSize(50, 553);
             VBox.setMargin(box, new Insets(5, 0, 15, 0));
             box.setOpaqueInsets(Insets.EMPTY);
             Color c = Color.rgb(151, 204, 240);
@@ -77,6 +92,7 @@ public class announcementController implements Initializable {
             Label tytul = new Label(ogloszenie.getTytul());
             tytul.setMinWidth(553);
             tytul.setPrefSize(24, 581);
+            tytul.setMaxHeight(24);
             tytul.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,null, new BorderWidths(3.0))));
             tytul.setAlignment(Pos.CENTER);
             tytul.setTextAlignment(TextAlignment.CENTER);
@@ -88,9 +104,9 @@ public class announcementController implements Initializable {
             autor.setTextAlignment(TextAlignment.CENTER);
             autor.setFont(new Font(14));
             autor.setMinWidth(553);
+            autor.setMaxHeight(17);
             Text text = new Text(ogloszenie.getText());
             VBox.setMargin(text, new Insets(15, 20, 10, 15));
-            text.setTabSize(550);
             text.setWrappingWidth(518.0);
             box.getChildren().add(tytul);
             box.getChildren().add(autor);

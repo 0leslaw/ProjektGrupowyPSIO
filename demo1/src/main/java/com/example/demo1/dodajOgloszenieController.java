@@ -2,6 +2,7 @@ package com.example.demo1;
 
 import Ogłoszenia.Ogloszenie;
 import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class dodajOgloszenieController implements Initializable {
@@ -67,7 +69,7 @@ public class dodajOgloszenieController implements Initializable {
     }
 
     @FXML
-    public void dodajButtonAction() throws IOException {
+    public void dodajButtonAction() throws IOException, ClassNotFoundException {
 
         if(autor.getText().isEmpty() || tytul.getText().isEmpty() || tresc.getText().isEmpty()){
             brakDanych.setVisible(true);
@@ -75,12 +77,13 @@ public class dodajOgloszenieController implements Initializable {
         else{
             brakDanych.setVisible(false);
             Ogloszenie ogloszenie = new Ogloszenie(autor.getText(), tytul.getText(), tresc.getText(), LocalDateTime.now());
-            SerializacjaObiektow.serializacjaOgloszen(ogloszenie, "PlikOgloszen.ser");
+            ArrayList<Ogloszenie> ogloszenia = SerializacjaObiektow.odczytOgloszen("PlikOgloszen.ser");
+            ogloszenia.add(ogloszenie);
+            SerializacjaObiektow.serializacjaOgloszen(ogloszenia, "PlikOgloszen.ser");
             autor.clear();
             tytul.clear();
             tresc.clear();
         }
-
     }
 
     @Override

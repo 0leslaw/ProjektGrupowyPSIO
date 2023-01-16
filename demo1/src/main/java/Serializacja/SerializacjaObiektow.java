@@ -14,11 +14,11 @@ public class SerializacjaObiektow {
 
     //Odczyt i zapis arraylist
 
-    public static void serializacjaOgloszen(Ogloszenie ogloszenie, String nazwapliku) throws IOException{
+    public static void serializacjaOgloszen(ArrayList<Ogloszenie> studenci, String nazwapliku) throws IOException{
         ObjectOutputStream pl=null;
         try{
             pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
-            pl.writeObject(ogloszenie);
+            pl.writeObject(studenci);
             pl.flush();
             System.out.println("Poprawny zapis");
         }
@@ -26,6 +26,20 @@ public class SerializacjaObiektow {
             if(pl!=null)
                 pl.close();
         }
+    }
+
+    public static ArrayList<Ogloszenie> odczytOgloszen(String nazwapliku) throws IOException, ClassNotFoundException {
+        ObjectInputStream pl=null;
+        ArrayList<Ogloszenie> odczytane = new ArrayList<>();
+        try{
+            pl=new ObjectInputStream(new FileInputStream(nazwapliku));
+            odczytane.addAll((ArrayList<Ogloszenie>) pl.readObject());
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+        return odczytane;
     }
 
     public static <T> ArrayList<T> odczytDowolnejArrayListy(String nazwapliku) throws IOException, ClassNotFoundException {

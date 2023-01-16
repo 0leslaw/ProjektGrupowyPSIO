@@ -1,5 +1,7 @@
 package com.example.demo1;
 
+import Ogłoszenia.Ogloszenie;
+import Serializacja.SerializacjaObiektow;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
