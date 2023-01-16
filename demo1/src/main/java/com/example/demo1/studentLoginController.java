@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 import Dane.Dane;
+import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
 import javafx.fxml.FXML;
@@ -33,7 +34,7 @@ public class studentLoginController {
     @FXML
     public void loginButtonAction() throws IOException, ClassNotFoundException {
         ArrayList<Student> listaStudentow = new ArrayList<Student>();
-        listaStudentow.addAll(Dane.odczytStudentow());
+        listaStudentow.addAll(SerializacjaObiektow.odczytStudentow());
         for(Uzytkownik uzytkownik: listaStudentow){
             if(loginTF.getText().equals(uzytkownik.getLogin()) && passwordTF.getText().equals(uzytkownik.getHaslo())){
                 try {

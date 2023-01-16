@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -75,7 +76,7 @@ public class usunStudentaController implements Initializable {
         int i = 0;
         ArrayList<Student> studenci = null;
         try {
-            studenci = Dane.odczytStudentow();
+            studenci = SerializacjaObiektow.odczytStudentow();
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -129,11 +130,11 @@ public class usunStudentaController implements Initializable {
     }
 
     public void usunStudentaAction(Event e) throws IOException, ClassNotFoundException {
-        ArrayList<Student> studenci = Dane.odczytStudentow();
+        ArrayList<Student> studenci = SerializacjaObiektow.odczytStudentow();
         Button button = (Button) e.getTarget();
         int id = Integer.parseInt(button.getId());
         studenci.remove(id);
-        Dane.zapisStudentow(studenci);
+        SerializacjaObiektow.zapisStudentow(studenci, "PlikStudentow.ser");
         usunStudenta(returnButton);
     }
 

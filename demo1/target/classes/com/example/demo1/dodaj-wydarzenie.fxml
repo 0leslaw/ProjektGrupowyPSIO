@@ -14,16 +14,16 @@
          </font>
       </Label>
       <TextField fx:id="autor" layoutX="35.0" layoutY="126.0" />
-      <Label alignment="CENTER" layoutX="35.0" layoutY="98.0" prefHeight="26.0" prefWidth="150.0" text="Dane 1">
+      <Label alignment="CENTER" layoutX="35.0" layoutY="98.0" prefHeight="26.0" prefWidth="150.0" text="Autor">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="34.0" layoutY="175.0" prefHeight="18.0" prefWidth="150.0" text="Dane 2" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="175.0" prefHeight="18.0" prefWidth="150.0" text="Nazwa wydarzenia" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
       <TextField fx:id="tytul" layoutX="35.0" layoutY="199.0" />
-      <Label layoutX="380.0" layoutY="102.0" text="Dane 3">
+      <Label layoutX="380.0" layoutY="102.0" text="Treść">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Label>
@@ -37,12 +37,12 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="34.0" layoutY="246.0" prefHeight="18.0" prefWidth="150.0" text="Dane 3" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="246.0" prefHeight="18.0" prefWidth="150.0" text="Data(dd-mm-yyyy)" textAlignment="CENTER">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tytul1" layoutX="35.0" layoutY="270.0" />
+      <TextField fx:id="data" layoutX="35.0" layoutY="270.0" />
       <Button fx:id="dodajButton" layoutX="250.0" layoutY="336.0" mnemonicParsing="false" onAction="#dodajButtonAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #5070cc;" text="Dodaj" textFill="WHITE">
          <font>
             <Font name="Consolas" size="18.0" />

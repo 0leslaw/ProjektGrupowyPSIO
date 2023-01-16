@@ -2,6 +2,7 @@ package Serializacja;
 
 import Ogłoszenia.Ogloszenie;
 import PakietKursy.Kursy;
+import PakietWydarzenie.Wydarzenie;
 import Uzytkownicy.Osoba;
 import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
@@ -44,6 +45,39 @@ public class SerializacjaObiektow {
                 pl.close();
         }
     }
+
+    public static ArrayList<Wydarzenie> odczytWydarzen()throws IOException,ClassNotFoundException{
+
+        ObjectInputStream pl2 = null;
+        ArrayList<Wydarzenie> lista_wydarzen = new ArrayList<>();
+        try{
+            if(new File("PlikWydarzen.ser").length() >0) {
+                pl2 = new ObjectInputStream(new FileInputStream("PlikWydarzen.ser"));
+                lista_wydarzen.addAll((ArrayList<Wydarzenie>) pl2.readObject());
+            }
+
+        } catch (EOFException ex) {}
+
+        finally{
+            if(pl2!=null)
+                pl2.close();
+        }
+        return lista_wydarzen;
+    }
+
+    public static void zapisWydarzen(ArrayList<Wydarzenie> lista_wydarzen, String nazwapliku)throws IOException {
+        ObjectOutputStream pl=null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
+            pl.writeObject(lista_wydarzen);
+            pl.flush();
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
+
     public static <T> ArrayList<T> odczytDowolnejArrayListy(String nazwapliku) throws IOException, ClassNotFoundException {
         ObjectInputStream pl2=null;
         ArrayList<T> lista_T = null;

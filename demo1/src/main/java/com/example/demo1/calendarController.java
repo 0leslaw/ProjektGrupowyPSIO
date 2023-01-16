@@ -19,6 +19,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import Dane.*;
+
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -46,6 +48,7 @@ public class calendarController implements Initializable
             stage.show();
         } catch(Exception e) {
             System.out.println("Nie można załadować kalendarza");
+            e.printStackTrace();
         }
     }
 
@@ -65,20 +68,38 @@ public class calendarController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        fillGrid(8);
+        try {
+            fillGrid(8);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void NextWeek(){
         przesuniecie++;
-        fillGrid(1);
+        try {
+            fillGrid(1);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void LastWeek(){
         przesuniecie--;
-        fillGrid(1);
+        try {
+            fillGrid(1);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void fillGrid(int tmp) {
+    public void fillGrid(int tmp) throws IOException, ClassNotFoundException {
         ArrayList<Node> dniTyg = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
             dniTyg.add(grid.getChildren().get(i*tmp));

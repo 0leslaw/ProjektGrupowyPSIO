@@ -1,20 +1,41 @@
 package com.example.demo1;
 
+import PakietWydarzenie.Wydarzenie;
+import Serializacja.SerializacjaObiektow;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class dodajWydarzenieController implements Initializable {
     @FXML
     private Button returnButton;
+    @FXML
+    private TextField autor;
+    @FXML
+    private TextField tytul;
+    @FXML
+    private TextField tresc;
+    @FXML
+    private TextField data;
+    @FXML
+    private Button dodajButton;
+    @FXML
+    private Label brakDanych;
 
     @FXML
     public void wydarzenieController(Button wydarzenieButton){
@@ -31,11 +52,16 @@ public class dodajWydarzenieController implements Initializable {
     }
 
     @FXML
-    public void dodajButtonAction() throws IOException {
-        //dodawanie wydarzen do kalendarza
-        //na inpucie zaimplementowac kalendarz i mozliwosc zaznaczania na nim dni w ktorych cos ma sie dziac
-        //przyciski dodaj usun edytuj na gorze
-
+    public void dodajButtonAction() throws IOException, ClassNotFoundException {
+        brakDanych.setVisible(false);
+        ArrayList<Wydarzenie> wydarzenia = new ArrayList<>();
+        wydarzenia.addAll(SerializacjaObiektow.odczytWydarzen());
+        if(autor.getText() != "" && data.getText() != "" && tytul.getText() != "" && tresc.getText() != ""){
+            wydarzenia.add(new Wydarzenie(tytul.getText(), LocalDateTime.parse(data.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")), autor.getText(), tresc.getText()));
+        }else{
+            brakDanych.setVisible(true);
+        }
+        SerializacjaObiektow.zapisWydarzen(wydarzenia, "PlikWydarzen.ser");
     }
 
     @FXML
