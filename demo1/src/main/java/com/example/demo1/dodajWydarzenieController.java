@@ -62,6 +62,10 @@ public class dodajWydarzenieController implements Initializable {
             brakDanych.setVisible(true);
         }
         SerializacjaObiektow.zapisWydarzen(wydarzenia, "PlikWydarzen.ser");
+        autor.setText("");
+        tresc.setText("");
+        data.setText("");
+        tytul.setText("");
     }
 
     @FXML

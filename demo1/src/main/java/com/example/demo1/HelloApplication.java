@@ -1,14 +1,9 @@
 package com.example.demo1;
-
-import Ogłoszenia.Ogloszenie;
-import PakietWydarzenie.Wydarzenie;
-import Serializacja.SerializacjaObiektow;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class HelloApplication extends Application {
     @Override
@@ -24,7 +19,6 @@ public class HelloApplication extends Application {
     //można wykorzystać strategie do wyszukiwania ocen po prowadzących lub kursach
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        SerializacjaObiektow.zapisWydarzen(new ArrayList<Wydarzenie>(), "PlikStudentow.ser");
         launch();
     }
 }

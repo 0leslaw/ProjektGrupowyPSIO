@@ -3,19 +3,15 @@ package Dane;
 import Menu.Danie;
 import Menu.Menu;
 import Obserwowani.Kalendarz;
-import Ogłoszenia.Ogloszenie;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Pracownik;
 import Uzytkownicy.Samorzad;
 import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
 import PakietWydarzenie.Wydarzenie;
-
 import java.io.*;
-import java.net.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.PriorityQueue;
 
 public class Dane {
 
