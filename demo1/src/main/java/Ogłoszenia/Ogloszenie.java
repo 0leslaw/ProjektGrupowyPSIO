@@ -6,11 +6,8 @@ import java.time.LocalDateTime;
 public class Ogloszenie implements Comparable<Ogloszenie>, Serializable{
 
     private String autor;
-
     private String tytul;
-
     private String text;
-
     private LocalDateTime dataDodania;
 
     public Ogloszenie(String autor, String tytul, String text, LocalDateTime dataDodania){
