@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -77,10 +78,10 @@ public class stworzStudentaController implements Initializable {
     // trzeba dodac kursy w osobnym stag'u/fxmlu oraz zapisac je do pliku
     public void dodajStudentaButtonOnAction() throws IOException, ClassNotFoundException{ // chyba ze przydzielamy studentowi jakos losowo kursy z pliku
         if(imie.getText().length() != 0 && nazwisko.getText().length() != 0 && email.getText().length() != 0 && login.getText().length() != 0 && haslo.getText().length() != 0 && semestr.getText().length() != 0 && numer_indeksu.getText().length() != 0 && kierunek.getText().length() != 0) {
-            ArrayList<Student> listaStudentow = Dane.odczytStudentow();
+            ArrayList<Student> listaStudentow = SerializacjaObiektow.odczytStudentow();
             Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText());
             listaStudentow.add(student);
-            Dane.zapisStudentow(listaStudentow);
+            SerializacjaObiektow.zapisStudentow(listaStudentow, "PlikStudentow.ser");
             imie.setText("");
             drugie_imie.setText("");
             nazwisko.setText("");

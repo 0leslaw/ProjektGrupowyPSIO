@@ -14,34 +14,36 @@ public class SerializacjaObiektow {
 
     //Odczyt i zapis arraylist
 
-    public static void serializacjaOgloszen(ArrayList<Ogloszenie> studenci, String nazwapliku) throws IOException{
+    public static ArrayList<Ogloszenie> odczytOgloszen()throws IOException,ClassNotFoundException{
+
+        ObjectInputStream pl2 = null;
+        ArrayList<Ogloszenie> lista_ogloszen = new ArrayList<>();
+        try{
+            if(new File("PlikOgloszen.ser").length() >0) {
+                pl2 = new ObjectInputStream(new FileInputStream("PlikOgloszen.ser"));
+                lista_ogloszen.addAll((ArrayList<Ogloszenie>) pl2.readObject());
+            }
+
+        } catch (EOFException ex) {}
+
+        finally{
+            if(pl2!=null)
+                pl2.close();
+        }
+        return lista_ogloszen;
+    }
+    public static void zapisOgloszenia(ArrayList<Ogloszenie> lista_ogloszen, String nazwapliku)throws IOException {
         ObjectOutputStream pl=null;
         try{
             pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
-            pl.writeObject(studenci);
+            pl.writeObject(lista_ogloszen);
             pl.flush();
-            System.out.println("Poprawny zapis");
         }
         finally{
             if(pl!=null)
                 pl.close();
         }
     }
-
-    public static ArrayList<Ogloszenie> odczytOgloszen(String nazwapliku) throws IOException, ClassNotFoundException {
-        ObjectInputStream pl=null;
-        ArrayList<Ogloszenie> odczytane = new ArrayList<>();
-        try{
-            pl=new ObjectInputStream(new FileInputStream(nazwapliku));
-            odczytane.addAll((ArrayList<Ogloszenie>) pl.readObject());
-        }
-        finally{
-            if(pl!=null)
-                pl.close();
-        }
-        return odczytane;
-    }
-
     public static <T> ArrayList<T> odczytDowolnejArrayListy(String nazwapliku) throws IOException, ClassNotFoundException {
         ObjectInputStream pl2=null;
         ArrayList<T> lista_T = null;

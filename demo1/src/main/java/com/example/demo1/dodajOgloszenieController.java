@@ -77,9 +77,9 @@ public class dodajOgloszenieController implements Initializable {
         else{
             brakDanych.setVisible(false);
             Ogloszenie ogloszenie = new Ogloszenie(autor.getText(), tytul.getText(), tresc.getText(), LocalDateTime.now());
-            ArrayList<Ogloszenie> ogloszenia = SerializacjaObiektow.odczytOgloszen("PlikOgloszen.ser");
+            ArrayList<Ogloszenie> ogloszenia = SerializacjaObiektow.odczytOgloszen();
             ogloszenia.add(ogloszenie);
-            SerializacjaObiektow.serializacjaOgloszen(ogloszenia, "PlikOgloszen.ser");
+            SerializacjaObiektow.zapisOgloszenia(ogloszenia, "PlikOgloszen.ser");
             autor.clear();
             tytul.clear();
             tresc.clear();

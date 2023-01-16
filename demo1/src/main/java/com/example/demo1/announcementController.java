@@ -67,8 +67,8 @@ public class announcementController implements Initializable {
         PriorityQueue<Ogloszenie> pq = new PriorityQueue<>();
         ArrayList<Ogloszenie> ogloszeniaPom = new ArrayList<>();
         try {
-            size = SerializacjaObiektow.odczytOgloszen("PlikOgloszen.ser").size();
-            ogloszeniaPom = SerializacjaObiektow.odczytOgloszen("PlikOgloszen.ser");
+            size = SerializacjaObiektow.odczytOgloszen().size();
+            ogloszeniaPom = SerializacjaObiektow.odczytOgloszen();
         } catch (EOFException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
