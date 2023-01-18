@@ -1,5 +1,6 @@
 package com.example.demo1;
 import Obseratorzy.Powiadomienie;
+import Obserwowani.Kalendarz;
 import Obserwowani.TablicaOgloszen;
 import Serializacja.SerializacjaObiektow;
 import javafx.application.Application;
@@ -7,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.io.Serial;
 import java.util.ArrayList;
 
 public class HelloApplication extends Application {

@@ -1,6 +1,6 @@
 package com.example.demo1;
 
-import Dane.Dane;
+import Dane.*;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
 import Uzytkownicy.Uzytkownik;
@@ -37,6 +37,7 @@ public class studentLoginController {
         listaStudentow.addAll(SerializacjaObiektow.odczytStudentow());
         for(Uzytkownik uzytkownik: listaStudentow){
             if(loginTF.getText().equals(uzytkownik.getLogin()) && passwordTF.getText().equals(uzytkownik.getHaslo())){
+                PrzekazywanieStudenta.setIndeksStudentaLista(listaStudentow.indexOf(uzytkownik));
                 try {
                     Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-student.fxml"));
                     Stage stage = (Stage) loginButton.getScene().getWindow();

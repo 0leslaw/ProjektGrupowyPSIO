@@ -36,6 +36,8 @@
                   <Font name="Consolas" size="16.0" />
                </font>
             </Button>
+            <Label fx:id="wydarzeniaNowe" alignment="CENTER_RIGHT" layoutX="386.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Label" visible="false" />
+            <Label fx:id="ogloszeniaNowe" alignment="CENTER_RIGHT" layoutX="386.0" layoutY="34.0" prefHeight="17.0" prefWidth="200.0" text="Label" visible="false" />
             </children>
         </AnchorPane>
     </center>

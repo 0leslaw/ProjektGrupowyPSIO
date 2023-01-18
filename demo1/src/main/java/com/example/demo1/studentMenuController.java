@@ -1,7 +1,9 @@
 package com.example.demo1;
 
-import Dane.Dane;
+import Dane.*;
 import Menu.Menu;
+import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,11 +16,13 @@ import javafx.scene.shape.Path;
 import javafx.stage.Stage;
 import Menu.*;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
-public class studentMenuController{
+public class studentMenuController implements Initializable{
 
     @FXML
     private Button announcementButton;
@@ -33,7 +37,10 @@ public class studentMenuController{
     private Button mapButton;
     @FXML
     private Button returnButton;
-
+    @FXML
+    private Label wydarzeniaNowe;
+    @FXML
+    private Label ogloszeniaNowe;
 
 
     @FXML
@@ -70,6 +77,26 @@ public class studentMenuController{
             stage.show();
         } catch(Exception e) {
             System.out.println("Nie moża załadować panelu głównego");
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ArrayList<Student> studenci = null;
+        try {
+            studenci = SerializacjaObiektow.odczytStudentow();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        if(studenci != null){
+            if(studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).isPowiadomienia()){
+                ogloszeniaNowe.setText("Nowe ogłoszenia: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_nowych_ogloszen());
+                ogloszeniaNowe.setVisible(true);
+                wydarzeniaNowe.setText("Nowe wydarzenia: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_nowych_wydarzen());
+                wydarzeniaNowe.setVisible(true);
+            }
         }
     }
 }

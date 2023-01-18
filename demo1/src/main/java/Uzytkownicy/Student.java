@@ -1,7 +1,6 @@
 package Uzytkownicy;
 
 import PakietKursy.Kursy;
-
 import java.util.ArrayList;
 
 public class Student extends Uzytkownik{
@@ -11,7 +10,7 @@ public class Student extends Uzytkownik{
     private String kierunek;
     private int liczba_nowych_ogloszen;
     private int liczba_nowych_wydarzen;
-    private boolean powiadomienia = false;
+    private boolean powiadomienia = true;
 
     public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);

@@ -1,7 +1,9 @@
 package com.example.demo1;
 
+import Dane.PrzekazywanieStudenta;
 import Ogłoszenia.Ogloszenie;
 import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -112,6 +114,23 @@ public class announcementController implements Initializable {
             box.getChildren().add(autor);
             box.getChildren().add(text);
             ogloszeniaBox.getChildren().add(box);
+
+        }
+        ArrayList<Student> studenci= null;
+        try {
+            studenci = SerializacjaObiektow.odczytStudentow();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        if(studenci != null){
+            studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_nowych_ogloszen(0);
+        }
+        try {
+            SerializacjaObiektow.zapisStudentow(studenci, "PlikStudentow.ser");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
