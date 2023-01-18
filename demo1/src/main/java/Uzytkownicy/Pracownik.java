@@ -8,10 +8,10 @@ public class Pracownik extends Uzytkownik{
     //pracownik musi posiadac kurs a kurs ocene bo kilka kursow moze miec jednego prowadzacego
     //a w przypadku gdy chcemy miec mozliwosc oceny kazdego kursu
 
-    String wydzial;
-    String tytul_naukowy;
-    String katedra;
-    ArrayList<Kursy> kursy = new ArrayList<>();
+    private String wydzial;
+    private String tytul_naukowy;
+    private String katedra;
+    private ArrayList<Kursy> kursy = new ArrayList<>();
 
     public Pracownik(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, String wydzial, String tytul_naukowy, String katedra) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);

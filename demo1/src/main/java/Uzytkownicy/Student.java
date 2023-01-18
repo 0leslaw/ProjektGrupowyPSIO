@@ -5,11 +5,13 @@ import PakietKursy.Kursy;
 import java.util.ArrayList;
 
 public class Student extends Uzytkownik{
-    int semestr;
-    ArrayList<Kursy> lista_kursow = new ArrayList<>();
-    String nr_indeksu;
-    String kierunek;
-    int liczba_nowych_powiadomien;
+    private int semestr;
+    private ArrayList<Kursy> lista_kursow = new ArrayList<>();
+    private String nr_indeksu;
+    private String kierunek;
+    private int liczba_nowych_ogloszen;
+    private int liczba_nowych_wydarzen;
+    private boolean powiadomienia = false;
 
     public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);
@@ -50,12 +52,12 @@ public class Student extends Uzytkownik{
         this.kierunek = kierunek;
     }
 
-    public int getLiczba_nowych_powiadomien() {
-        return liczba_nowych_powiadomien;
+    public int getLiczba_nowych_ogloszen() {
+        return liczba_nowych_ogloszen;
     }
 
-    public void setLiczba_nowych_powiadomien(int liczba_nowych_powiadomien) {
-        this.liczba_nowych_powiadomien = liczba_nowych_powiadomien;
+    public void setLiczba_nowych_ogloszen(int liczba_nowych_ogloszen) {
+        this.liczba_nowych_ogloszen = liczba_nowych_ogloszen;
     }
 
     @Override
@@ -65,7 +67,7 @@ public class Student extends Uzytkownik{
                 ", lista_kursow=" + lista_kursow +
                 ", nr_indeksu='" + nr_indeksu + '\'' +
                 ", kierunek='" + kierunek + '\'' +
-                ", liczba_nowych_powiadomien=" + liczba_nowych_powiadomien +
+                ", liczba_nowych_powiadomien=" + liczba_nowych_ogloszen +
                 ", login='" + login + '\'' +
                 ", haslo='" + haslo + '\'' +
                 ", imie='" + imie + '\'' +
@@ -73,5 +75,21 @@ public class Student extends Uzytkownik{
                 ", nazwisko='" + nazwisko + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public int getLiczba_nowych_wydarzen() {
+        return liczba_nowych_wydarzen;
+    }
+
+    public void setLiczba_nowych_wydarzen(int liczba_nowych_wydarzen) {
+        this.liczba_nowych_wydarzen = liczba_nowych_wydarzen;
+    }
+
+    public boolean isPowiadomienia() {
+        return powiadomienia;
+    }
+
+    public void setPowiadomienia(boolean powiadomienia) {
+        this.powiadomienia = powiadomienia;
     }
 }

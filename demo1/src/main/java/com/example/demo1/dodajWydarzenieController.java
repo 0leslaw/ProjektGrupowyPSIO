@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Obserwowani.Kalendarz;
 import PakietWydarzenie.Wydarzenie;
 import Serializacja.SerializacjaObiektow;
 import javafx.fxml.FXML;
@@ -54,14 +55,14 @@ public class dodajWydarzenieController implements Initializable {
     @FXML
     public void dodajButtonAction() throws IOException, ClassNotFoundException {
         brakDanych.setVisible(false);
-        ArrayList<Wydarzenie> wydarzenia = new ArrayList<>();
-        wydarzenia.addAll(SerializacjaObiektow.odczytWydarzen());
+        Kalendarz kalendarz;
+        kalendarz = SerializacjaObiektow.odczytKalendarz();
         if(autor.getText() != "" && data.getText() != "" && tytul.getText() != "" && tresc.getText() != ""){
-            wydarzenia.add(new Wydarzenie(tytul.getText(), LocalDateTime.parse(data.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")), autor.getText(), tresc.getText()));
+            kalendarz.dodajWydarzenieDoKalendarza(new Wydarzenie(tytul.getText(), LocalDateTime.parse(data.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")), autor.getText(), tresc.getText()));
         }else{
             brakDanych.setVisible(true);
         }
-        SerializacjaObiektow.zapisWydarzen(wydarzenia, "PlikWydarzen.ser");
+        SerializacjaObiektow.zapisKalendarza(kalendarz, "Kalendarz.ser");
         autor.setText("");
         tresc.setText("");
         data.setText("");

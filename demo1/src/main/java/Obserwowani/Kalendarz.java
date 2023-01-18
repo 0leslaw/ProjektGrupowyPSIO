@@ -4,10 +4,11 @@ import Obseratorzy.Obserwator;
 import PakietWydarzenie.Wydarzenie;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Kalendarz  implements Obserwowany {
+public class Kalendarz  implements Obserwowany, Serializable {
 
     // lista obserwatorow
     ArrayList<Obserwator> lista_obserwatorow = new ArrayList<>();
@@ -31,7 +32,7 @@ public class Kalendarz  implements Obserwowany {
     @Override
     public void powiadomObserwatorow() throws IOException, ClassNotFoundException {
         for(int i = 0; i<lista_obserwatorow.size(); i++){
-            lista_obserwatorow.get(i).uaktualnijDane(lista_wydarzen.get(lista_wydarzen.size()-1));
+            lista_obserwatorow.get(i).uaktualnijWydarzenia();
         }
     }
 
@@ -75,6 +76,10 @@ public class Kalendarz  implements Obserwowany {
         data_najb_ubieglego_poniedzialku = data_najb_ubieglego_poniedzialku.minusDays(data_najb_ubieglego_poniedzialku.getDayOfWeek().getValue()-1);
 
         return data_najb_ubieglego_poniedzialku;
+    }
+
+    public ArrayList<Wydarzenie> getLista_wydarzen(){
+        return this.lista_wydarzen;
     }
 
 }

@@ -5,5 +5,7 @@ import PakietWydarzenie.Wydarzenie;
 import java.io.IOException;
 
 public interface Obserwator {
-    public void uaktualnijDane(Wydarzenie nowe_wydarzenie) throws IOException, ClassNotFoundException;
+    public void uaktualnijWydarzenia() throws IOException, ClassNotFoundException;
+
+    public void uaktualnijOgloszenia() throws IOException, ClassNotFoundException;
 }

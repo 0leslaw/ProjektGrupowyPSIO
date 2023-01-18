@@ -1,5 +1,6 @@
 package Serializacja;
 
+import Obserwowani.Kalendarz;
 import Ogłoszenia.Ogloszenie;
 import PakietKursy.Kursy;
 import PakietWydarzenie.Wydarzenie;
@@ -55,9 +56,7 @@ public class SerializacjaObiektow {
                 pl2 = new ObjectInputStream(new FileInputStream("PlikWydarzen.ser"));
                 lista_wydarzen.addAll((ArrayList<Wydarzenie>) pl2.readObject());
             }
-
         } catch (EOFException ex) {}
-
         finally{
             if(pl2!=null)
                 pl2.close();
@@ -173,6 +172,37 @@ public class SerializacjaObiektow {
                 pl2.close();
         }
         return lista_osob;
+    }
+
+    public static void zapisKalendarza(Kalendarz kalendarz, String nazwapliku)throws IOException {
+        ObjectOutputStream pl=null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
+            pl.writeObject(kalendarz);
+            pl.flush();
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
+
+    public static Kalendarz odczytKalendarz()throws IOException,ClassNotFoundException {
+
+        ObjectInputStream pl2 = null;
+        Kalendarz kalendarz = null;
+        try {
+            if (new File("Kalendarz.ser").length() > 0) {
+                pl2 = new ObjectInputStream(new FileInputStream("Kalendarz.ser"));
+                kalendarz = (Kalendarz) pl2.readObject();
+            }
+
+        } catch (EOFException ex) {
+        } finally {
+            if (pl2 != null)
+                pl2.close();
+        }
+        return kalendarz;
     }
 
     //kursow

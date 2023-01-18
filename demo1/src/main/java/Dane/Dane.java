@@ -43,8 +43,7 @@ public class Dane {
     }
 
     public static ArrayList<Wydarzenie> stworzWydarzenia(LocalDateTime dzien, int przesuniecie, int od_pon) throws IOException, ClassNotFoundException {
-        ArrayList<Wydarzenie> wydarzenia = SerializacjaObiektow.odczytWydarzen();
-        Kalendarz kalendarz = new Kalendarz(wydarzenia);
+        Kalendarz kalendarz = SerializacjaObiektow.odczytKalendarz();
         return kalendarz.stworzListeWydarzenNaDzien(dzien.plusDays(7*przesuniecie), od_pon);
     }
 
