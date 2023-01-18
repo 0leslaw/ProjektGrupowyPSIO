@@ -51,6 +51,7 @@ public class Powiadomienie implements Obserwator, Serializable {
     @Override
     public void uaktualnijOgloszenia() throws IOException, ClassNotFoundException {
         ArrayList<Student> studenci = SerializacjaObiektow.odczytStudentow();
+        System.out.println("test");
         for(Student student: studenci){
             if(student.isPowiadomienia()){
                 student.setLiczba_nowych_ogloszen(student.getLiczba_nowych_ogloszen()+1);

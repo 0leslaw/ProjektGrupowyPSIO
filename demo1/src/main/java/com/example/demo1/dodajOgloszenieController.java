@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Obserwowani.TablicaOgloszen;
 import Ogłoszenia.Ogloszenie;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
@@ -76,10 +77,9 @@ public class dodajOgloszenieController implements Initializable {
         }
         else{
             brakDanych.setVisible(false);
-            Ogloszenie ogloszenie = new Ogloszenie(autor.getText(), tytul.getText(), tresc.getText(), LocalDateTime.now());
-            ArrayList<Ogloszenie> ogloszenia = SerializacjaObiektow.odczytOgloszen();
-            ogloszenia.add(ogloszenie);
-            SerializacjaObiektow.zapisOgloszenia(ogloszenia, "PlikOgloszen.ser");
+            TablicaOgloszen tablica = SerializacjaObiektow.odczytTablicyOgloszen();
+            tablica.dodajOgloszenieDoTablicy(new Ogloszenie(autor.getText(), tytul.getText(), tresc.getText(), LocalDateTime.now()));
+            SerializacjaObiektow.zapisTablicyOgloszen(tablica, "TablicaOgloszen.ser");
             autor.clear();
             tytul.clear();
             tresc.clear();

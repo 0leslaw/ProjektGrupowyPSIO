@@ -1,6 +1,7 @@
 package Serializacja;
 
 import Obserwowani.Kalendarz;
+import Obserwowani.TablicaOgloszen;
 import Ogłoszenia.Ogloszenie;
 import PakietKursy.Kursy;
 import PakietWydarzenie.Wydarzenie;
@@ -164,7 +165,6 @@ public class SerializacjaObiektow {
                 pl2 = new ObjectInputStream(new FileInputStream("PlikStudentow.ser"));
                 lista_osob.addAll((ArrayList<Student>) pl2.readObject());
             }
-
         } catch (EOFException ex) {}
 
         finally{
@@ -203,6 +203,37 @@ public class SerializacjaObiektow {
                 pl2.close();
         }
         return kalendarz;
+    }
+
+    public static void zapisTablicyOgloszen(TablicaOgloszen tablica, String nazwapliku)throws IOException {
+        ObjectOutputStream pl=null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
+            pl.writeObject(tablica);
+            pl.flush();
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
+
+    public static TablicaOgloszen odczytTablicyOgloszen()throws IOException,ClassNotFoundException {
+
+        ObjectInputStream pl2 = null;
+        TablicaOgloszen tablica = null;
+        try {
+            if (new File("TablicaOgloszen.ser").length() > 0) {
+                pl2 = new ObjectInputStream(new FileInputStream("TablicaOgloszen.ser"));
+                tablica = (TablicaOgloszen) pl2.readObject();
+            }
+
+        } catch (EOFException ex) {
+        } finally {
+            if (pl2 != null)
+                pl2.close();
+        }
+        return tablica;
     }
 
     //kursow
