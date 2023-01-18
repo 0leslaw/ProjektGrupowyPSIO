@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -10,5 +12,25 @@
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
+      <TextField fx:id="login" layoutX="64.0" layoutY="292.0" />
+      <TextField fx:id="katedra" layoutX="348.0" layoutY="238.0" />
+      <TextField fx:id="email" layoutX="64.0" layoutY="238.0" />
+      <TextField fx:id="imie" layoutX="64.0" layoutY="80.0" />
+      <TextField fx:id="drugie_imie" layoutX="64.0" layoutY="134.0" />
+      <TextField fx:id="nazwisko" layoutX="64.0" layoutY="187.0" />
+      <TextField fx:id="tytul" layoutX="348.0" layoutY="187.0" />
+      <TextField fx:id="wydzial" layoutX="348.0" layoutY="134.0" />
+      <TextField fx:id="haslo" layoutX="348.0" layoutY="80.0" />
+      <Label layoutX="129.0" layoutY="63.0" text="Imie" />
+      <Label layoutX="110.0" layoutY="117.0" text="Drugie imie" />
+      <Label layoutX="114.0" layoutY="170.0" text="Nazwisko" />
+      <Label layoutX="123.0" layoutY="221.0" text="E-mail" />
+      <Label layoutX="125.0" layoutY="275.0" text="Login" />
+      <Label layoutX="412.0" layoutY="63.0" text="Hasło" />
+      <Label layoutX="405.0" layoutY="117.0" text="Wydział" />
+      <Label layoutX="388.0" layoutY="170.0" text="Tytuł naukowy" />
+      <Label layoutX="406.0" layoutY="221.0" text="Katedra" />
+      <Label fx:id="uwaga" layoutX="224.0" layoutY="358.0" text="Poprawnie dodano studenta" visible="false" />
+      <Button fx:id="dodajPracownika" layoutX="348.0" layoutY="292.0" mnemonicParsing="false" onAction="#dodajPracownika" prefHeight="26.0" prefWidth="160.0" text="Dodaj pracownika" />
    </children>
 </AnchorPane>

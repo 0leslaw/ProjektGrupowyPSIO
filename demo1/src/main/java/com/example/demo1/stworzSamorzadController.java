@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Samorzad;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class stworzSamorzadController implements Initializable {
@@ -60,9 +63,20 @@ public class stworzSamorzadController implements Initializable {
     }
 
 
-    public void dodajSamorzadButtonOnAction(){
-        Samorzad samorzad = new Samorzad(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText());
-        // serializacja samorzadu
+    public void dodajSamorzadButtonOnAction() throws IOException, ClassNotFoundException {
+        if(imie.getText() != "" && nazwisko.getText() != "" && email.getText() != "" && login.getText() != "" &&haslo.getText() != "") {
+            Samorzad samorzad = new Samorzad(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText());
+            ArrayList<Samorzad> lista_samorzad = SerializacjaObiektow.odczytSamorzad();
+            lista_samorzad.add(samorzad);
+            SerializacjaObiektow.zapisSamorzad(lista_samorzad, "PlikSamorzadu.ser");
+            imie.clear();
+            nazwisko.clear();
+            drugie_imie.clear();
+            email.clear();
+            login.clear();
+            haslo.clear();
+        }
+
     }
 
     @FXML

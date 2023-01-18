@@ -1,6 +1,8 @@
 package com.example.demo1;
 
-import Dane.Dane;
+import Dane.*;
+import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Pracownik;
 import Uzytkownicy.Uzytkownik;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class employeeLoginController {
     @FXML
@@ -41,9 +46,12 @@ public class employeeLoginController {
         }
     }
     @FXML
-    public void loginButtonAction() {
-        for(Uzytkownik uzytkownik: Dane.stworz_uzytkownikow()) {
+    public void loginButtonAction() throws IOException, ClassNotFoundException {
+        ArrayList<Pracownik> listaPracownikow = new ArrayList<>();
+        listaPracownikow.addAll(SerializacjaObiektow.odczytProwadzacych());
+        for(Uzytkownik uzytkownik: listaPracownikow) {
             if (loginTF.getText().equals(uzytkownik.getLogin()) && passwordTF.getText().equals(uzytkownik.getHaslo())) {
+                PrzekazywaniePracownika.setIndeksPracownika(listaPracownikow.indexOf(uzytkownik));
                 try {
                     Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-employee.fxml"));
                     Stage stage = (Stage) loginButton.getScene().getWindow();
