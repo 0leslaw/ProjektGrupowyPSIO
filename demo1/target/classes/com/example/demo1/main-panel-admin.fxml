@@ -28,7 +28,7 @@
             <Font name="Consolas" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="usunPracownika" layoutX="329.0" layoutY="140.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Pracownika" textFill="WHITE">
+      <Button fx:id="usunPracownika" layoutX="329.0" layoutY="140.0" mnemonicParsing="false" onAction="#toUsunPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Pracownika" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>
