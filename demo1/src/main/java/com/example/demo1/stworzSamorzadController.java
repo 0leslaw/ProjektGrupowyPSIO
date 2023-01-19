@@ -44,7 +44,7 @@ public class stworzSamorzadController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dodaj-samorzad.fxml"));
             Stage stage = (Stage) samorzadButton.getScene().getWindow();
-            stage.setTitle("Dodawanie studenta");
+            stage.setTitle("Dodawanie Samorządu");
             stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {

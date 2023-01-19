@@ -67,4 +67,12 @@ public class adminMenuController {
         usuwaniePomoc.setNazwisko("");
         controller.usunStudenta(usunStudenta);
     }
+
+    public void toUsunSamorzad(){
+        usunSamorzadController controller = new usunSamorzadController();
+        usuwaniePomoc.setIndeks("");
+        usuwaniePomoc.setImie("");
+        usuwaniePomoc.setNazwisko("");
+        controller.usunSamorzad(usunStudenta);
+    }
 }

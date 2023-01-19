@@ -44,7 +44,7 @@ public class stworzAdminaController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dodaj-admina.fxml"));
             Stage stage = (Stage) samorzadButton.getScene().getWindow();
-            stage.setTitle("Dodawanie studenta");
+            stage.setTitle("Dodawanie administratora");
             stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {

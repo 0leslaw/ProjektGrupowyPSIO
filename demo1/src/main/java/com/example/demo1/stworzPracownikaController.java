@@ -50,7 +50,7 @@ public class stworzPracownikaController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dodaj-pracownika.fxml"));
             Stage stage = (Stage) pracownikButton.getScene().getWindow();
-            stage.setTitle("Dodawanie studenta");
+            stage.setTitle("Dodawanie pracownika");
             stage.setScene(new Scene(root));
             stage.show();
         } catch(Exception e) {

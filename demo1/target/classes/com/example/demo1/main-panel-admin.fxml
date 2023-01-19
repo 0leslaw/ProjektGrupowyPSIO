@@ -14,7 +14,7 @@
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
-      <Button fx:id="dodajSamorzad" layoutX="33.0" layoutY="293.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Czlonka Samorzadu" textFill="WHITE">
+      <Button fx:id="dodajSamorzad" layoutX="33.0" layoutY="293.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Samorzad" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
@@ -33,7 +33,7 @@
             <Font name="Consolas" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="usunSamorzad" layoutX="329.0" layoutY="293.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Czlonka Samorzadu" textFill="WHITE">
+      <Button fx:id="usunSamorzad" layoutX="329.0" layoutY="293.0" mnemonicParsing="false" onAction="#toUsunSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Czlonka Samorzadu" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>
