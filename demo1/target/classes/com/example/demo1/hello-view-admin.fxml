@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +19,7 @@
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Text>
-      <TextField layoutX="225.0" layoutY="155.0" />
+      <TextField fx:id="loginTF" layoutX="225.0" layoutY="155.0" />
       <Text layoutX="270.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło" textAlignment="CENTER" wrappingWidth="60.0">
          <font>
             <Font name="Consolas" size="16.0" />
@@ -33,5 +34,6 @@
             <Font name="Consolas" size="16.0" />
          </font>
       </Button>
+      <Label fx:id="label" alignment="CENTER" layoutX="213.0" layoutY="345.0" prefHeight="17.0" prefWidth="184.0" text="Niepoprawne dane logowania" textFill="#f20202" visible="false" />
    </children>
 </AnchorPane>

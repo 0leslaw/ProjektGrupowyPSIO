@@ -43,7 +43,7 @@
             <Font name="Consolas" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="usunAdmina" layoutX="329.0" layoutY="67.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Admina" textFill="WHITE">
+      <Button fx:id="usunAdmina" layoutX="329.0" layoutY="67.0" mnemonicParsing="false" onAction="#toUsunAdmina" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Admina" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>

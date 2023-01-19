@@ -83,4 +83,12 @@ public class adminMenuController {
         usuwaniePomoc.setNazwisko("");
         controller.usunPracownika(usunStudenta);
     }
+
+    public void toUsunAdmina(){
+        usunAdminaController controller = new usunAdminaController();
+        usuwaniePomoc.setIndeks("");
+        usuwaniePomoc.setImie("");
+        usuwaniePomoc.setNazwisko("");
+        controller.usunAdmina(usunStudenta);
+    }
 }
