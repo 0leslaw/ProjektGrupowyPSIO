@@ -3,6 +3,7 @@ package Serializacja;
 import Obserwowani.Kalendarz;
 import Obserwowani.TablicaOgloszen;
 import PakietKursy.Kursy;
+import Uzytkownicy.Administrator;
 import Uzytkownicy.Pracownik;
 import Uzytkownicy.Samorzad;
 import Uzytkownicy.Student;
@@ -188,6 +189,37 @@ public class SerializacjaObiektow {
             if(new File("PlikPracownikow.ser").length() >0) {
                 pl2 = new ObjectInputStream(new FileInputStream("PlikPracownikow.ser"));
                 lista_osob.addAll((ArrayList<Pracownik>) pl2.readObject());
+            }
+        } catch (EOFException ex) {}
+
+        finally{
+            if(pl2!=null)
+                pl2.close();
+        }
+        return lista_osob;
+    }
+
+    public static void zapisAdminow(ArrayList<Administrator> lista_osob, String nazwapliku)throws IOException {
+        ObjectOutputStream pl = null;
+        try{
+            pl=new ObjectOutputStream(new FileOutputStream(nazwapliku));
+            pl.writeObject(lista_osob);
+            pl.flush();
+        }
+        finally{
+            if(pl!=null)
+                pl.close();
+        }
+    }
+
+    public static ArrayList<Administrator> odczytAdminow()throws IOException,ClassNotFoundException{
+
+        ObjectInputStream pl2 = null;
+        ArrayList<Administrator> lista_osob = new ArrayList<>();
+        try{
+            if(new File("PlikAdminow.ser").length() >0) {
+                pl2 = new ObjectInputStream(new FileInputStream("PlikAdminow.ser"));
+                lista_osob.addAll((ArrayList<Administrator>) pl2.readObject());
             }
         } catch (EOFException ex) {}
 

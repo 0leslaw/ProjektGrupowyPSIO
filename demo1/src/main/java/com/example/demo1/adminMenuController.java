@@ -22,7 +22,8 @@ public class adminMenuController {
     private Button dodajSamorzad;
     @FXML
     private Button returnButton;
-
+    @FXML
+    private Button dodajAdmina;
     @FXML
     private Button usunStudenta;
 
@@ -55,6 +56,10 @@ public class adminMenuController {
         controller.stworzSamorzad(dodajSamorzad);
     }
 
+    public void toDodajAdmina(){
+        stworzAdminaController controller = new stworzAdminaController();
+        controller.stworzAdmina(dodajAdmina);
+    }
     public void toUsunStudenta(){
         usunStudentaController controller = new usunStudentaController();
         usuwaniePomoc.setIndeks("");

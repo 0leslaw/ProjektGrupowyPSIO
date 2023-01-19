@@ -6,15 +6,15 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.adminMenuController">
    <children>
-      <Button fx:id="dodajStudenta" layoutX="30.0" layoutY="108.0" mnemonicParsing="false" onAction="#toDodajStudenta" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Studenta" textFill="WHITE">
+      <Button fx:id="dodajStudenta" layoutX="33.0" layoutY="215.0" mnemonicParsing="false" onAction="#toDodajStudenta" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Studenta" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
-      <Button fx:id="dodajPracownika" layoutX="332.0" layoutY="108.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Pracownika" textFill="WHITE">
+      <Button fx:id="dodajPracownika" layoutX="33.0" layoutY="140.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Pracownika" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
-      <Button fx:id="dodajSamorzad" layoutX="30.0" layoutY="237.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Czlonka Samorzadu" textFill="WHITE">
+      <Button fx:id="dodajSamorzad" layoutX="33.0" layoutY="293.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Czlonka Samorzadu" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font></Button>
@@ -23,7 +23,27 @@
             <Font name="Consolas" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="usunStudenta" layoutX="332.0" layoutY="237.0" mnemonicParsing="false" onAction="#toUsunStudenta" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń studenta" textFill="WHITE">
+      <Button fx:id="usunStudenta" layoutX="329.0" layoutY="215.0" mnemonicParsing="false" onAction="#toUsunStudenta" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń studenta" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="usunPracownika" layoutX="329.0" layoutY="140.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Pracownika" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="usunSamorzad" layoutX="329.0" layoutY="293.0" mnemonicParsing="false" onAction="#toDodajSamorzad" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Czlonka Samorzadu" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="dodajAdmina" layoutX="33.0" layoutY="67.0" mnemonicParsing="false" onAction="#toDodajAdmina" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Dodaj Admina" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="usunAdmina" layoutX="329.0" layoutY="67.0" mnemonicParsing="false" onAction="#toDodajPracownika" prefHeight="56.0" prefWidth="250.0" style="-fx-background-color: #5070cc;" text="Usuń Admina" textFill="WHITE">
          <font>
             <Font name="Consolas" size="16.0" />
          </font>

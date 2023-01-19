@@ -19,8 +19,6 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    //można wykorzystać strategie do wyszukiwania ocen po prowadzących lub kursach
-
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         launch();
     }

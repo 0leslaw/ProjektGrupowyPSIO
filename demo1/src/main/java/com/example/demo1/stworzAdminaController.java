@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Administrator;
 import Uzytkownicy.Samorzad;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class stworzSamorzadController implements Initializable {
-
+public class stworzAdminaController implements Initializable {
     @FXML
     private Button returnButton;
     @FXML
@@ -34,15 +34,15 @@ public class stworzSamorzadController implements Initializable {
     @FXML
     private TextField haslo;
     @FXML
-    private Label uwaga;
+    private Button dodajAdminaButton;
     @FXML
-    private Button dodajSamorzadButton;
+    private Label uwaga;
 
     @FXML
-    public void stworzSamorzad(Button samorzadButton)
+    public void stworzAdmina(Button samorzadButton)
     {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("dodaj-samorzad.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("dodaj-admina.fxml"));
             Stage stage = (Stage) samorzadButton.getScene().getWindow();
             stage.setTitle("Dodawanie studenta");
             stage.setScene(new Scene(root));
@@ -59,26 +59,25 @@ public class stworzSamorzadController implements Initializable {
     }
 
 
-    public void dodajSamorzadButtonOnAction() throws IOException, ClassNotFoundException {
+    public void dodajAdminaButtonOnAction() throws IOException, ClassNotFoundException {
         uwaga.setVisible(false);
         if(!imie.getText().isEmpty() && !nazwisko.getText().isEmpty() && !email.getText().isEmpty() && !login.getText().isEmpty() && !haslo.getText().isEmpty()) {
-            Samorzad samorzad = new Samorzad(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText());
-            ArrayList<Samorzad> lista_samorzad = SerializacjaObiektow.odczytSamorzad();
-            lista_samorzad.add(samorzad);
-            SerializacjaObiektow.zapisSamorzad(lista_samorzad, "PlikSamorzadu.ser");
+            Administrator admin = new Administrator(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText());
+            ArrayList<Administrator> lista_adminow = SerializacjaObiektow.odczytAdminow();
+            lista_adminow.add(admin);
+            SerializacjaObiektow.zapisAdminow(lista_adminow, "PlikAdminow.ser");
             imie.clear();
             nazwisko.clear();
             drugie_imie.clear();
             email.clear();
             login.clear();
             haslo.clear();
-            uwaga.setText("Poprawnie dodano Samorząd");
+            uwaga.setText("Poprawnie dodano Admina");
             uwaga.setVisible(true);
         }else{
-            uwaga.setText("Nie podano wszystkich danych");
+            uwaga.setText("Brak wszystkich danych");
             uwaga.setVisible(true);
         }
-
     }
 
     @FXML
