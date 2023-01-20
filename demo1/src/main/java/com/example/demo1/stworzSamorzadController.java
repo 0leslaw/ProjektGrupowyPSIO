@@ -34,8 +34,6 @@ public class stworzSamorzadController implements Initializable {
     private TextField haslo;
     @FXML
     private Label uwaga;
-    @FXML
-    private Button dodajSamorzadButton;
 
     @FXML
     public void stworzSamorzad(Button samorzadButton)

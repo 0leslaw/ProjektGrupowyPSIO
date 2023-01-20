@@ -30,8 +30,6 @@ public class dodajWydarzenieController implements Initializable {
     @FXML
     private TextField data;
     @FXML
-    private Button dodajButton;
-    @FXML
     private Label brakDanych;
 
     @FXML

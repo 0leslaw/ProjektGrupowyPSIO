@@ -34,11 +34,7 @@ public class usunStudentaController implements Initializable {
     @FXML
     private TextField szukaneNazwisko;
     @FXML
-    private Label uwaga;
-    @FXML
     private VBox studenciBox;
-    @FXML
-    private Button szukaj;
 
     public void usunStudenta(Button usuwanie)
     {

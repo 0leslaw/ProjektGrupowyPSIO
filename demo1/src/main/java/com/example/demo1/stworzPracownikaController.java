@@ -23,8 +23,6 @@ public class stworzPracownikaController implements Initializable {
     @FXML
     private Label uwaga;
     @FXML
-    private Button dodajPracownika;
-    @FXML
     private TextField imie;
     @FXML
     private TextField drugie_imie;

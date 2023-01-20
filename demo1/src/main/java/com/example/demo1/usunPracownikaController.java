@@ -32,11 +32,7 @@ public class usunPracownikaController implements Initializable {
     @FXML
     private TextField szukaneNazwisko;
     @FXML
-    private Label uwaga;
-    @FXML
     private VBox pracownikBox;
-    @FXML
-    private Button szukaj;
 
     public void usunPracownika(Button usuwanie)
     {

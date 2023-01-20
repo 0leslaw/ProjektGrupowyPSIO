@@ -31,11 +31,7 @@ public class usunAdminaController implements Initializable {
     @FXML
     private TextField szukaneNazwisko;
     @FXML
-    private Label uwaga;
-    @FXML
     private VBox adminBox;
-    @FXML
-    private Button szukaj;
 
     public void usunAdmina(Button usuwanie)
     {

@@ -31,11 +31,7 @@ public class usunSamorzadController implements Initializable {
     @FXML
     private TextField szukaneNazwisko;
     @FXML
-    private Label uwaga;
-    @FXML
     private VBox samorzadBox;
-    @FXML
-    private Button szukaj;
 
     public void usunSamorzad(Button usuwanie)
     {

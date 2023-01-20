@@ -32,8 +32,6 @@ public class stworzAdminaController implements Initializable {
     @FXML
     private TextField haslo;
     @FXML
-    private Button dodajAdminaButton;
-    @FXML
     private Label uwaga;
 
     @FXML

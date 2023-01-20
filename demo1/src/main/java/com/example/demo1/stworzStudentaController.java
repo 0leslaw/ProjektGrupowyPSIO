@@ -51,9 +51,6 @@ public class stworzStudentaController implements Initializable {
     private TextField kierunek;
 
     @FXML
-    private Button dodajStudentaButton;
-
-    @FXML
     private Label uwaga;
 
     @FXML

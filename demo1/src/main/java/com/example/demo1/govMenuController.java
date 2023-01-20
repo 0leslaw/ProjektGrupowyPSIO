@@ -19,9 +19,6 @@ public class govMenuController implements Initializable {
     @FXML
     private Button wydarzenieButton;
 
-    @FXML
-    private Button posilekButton;
-
     public void ogloszenieButtonAction(){
         dodajOgloszenieController controller = new dodajOgloszenieController();
         controller.ogloszenieController(ogloszenieButton);

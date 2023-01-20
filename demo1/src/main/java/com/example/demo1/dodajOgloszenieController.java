@@ -31,9 +31,6 @@ public class dodajOgloszenieController implements Initializable {
     private TextField tresc;
 
     @FXML
-    private Button dodajButton;
-
-    @FXML
     private Label brakDanych;
 
 
