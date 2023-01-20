@@ -1,7 +1,6 @@
 package Uzytkownicy;
 
 import PakietKursy.Kursy;
-
 import java.util.ArrayList;
 
 public class Pracownik extends Uzytkownik{

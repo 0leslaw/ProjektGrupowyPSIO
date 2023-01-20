@@ -3,7 +3,6 @@ package com.example.demo1;
 import Dane.usuwaniePomoc;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Administrator;
-import Uzytkownicy.Pracownik;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;

@@ -2,7 +2,6 @@ package Obserwowani;
 
 import Obseratorzy.Obserwator;
 import PakietWydarzenie.Wydarzenie;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;

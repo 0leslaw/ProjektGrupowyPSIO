@@ -1,7 +1,5 @@
 package com.example.demo1;
 
-import Ogłoszenia.Ogloszenie;
-import Serializacja.SerializacjaObiektow;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,10 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class dodajPosilekController implements Initializable {
@@ -36,8 +32,6 @@ public class dodajPosilekController implements Initializable {
     @FXML
     public void dodajButtonAction() throws IOException {
         //dodawanie posilku na konkretny dzien lub edycja kalendarza posilkow
-
-
     }
 
     @FXML

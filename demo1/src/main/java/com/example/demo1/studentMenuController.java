@@ -1,7 +1,6 @@
 package com.example.demo1;
 
 import Dane.*;
-import Menu.Menu;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
 import javafx.fxml.FXML;
@@ -11,11 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
 import javafx.stage.Stage;
-import Menu.*;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;

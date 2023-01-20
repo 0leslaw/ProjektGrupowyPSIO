@@ -1,9 +1,7 @@
 package com.example.demo1;
-
 import Dane.PrzekazywaniePracownika;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Administrator;
-import Uzytkownicy.Pracownik;
 import Uzytkownicy.Uzytkownik;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 

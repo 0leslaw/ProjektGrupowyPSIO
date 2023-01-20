@@ -18,7 +18,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import Dane.*;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;

@@ -1,5 +1,4 @@
 package PakietWydarzenie;
-import Uzytkownicy.Uzytkownik;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

@@ -2,8 +2,6 @@ package Obserwowani;
 
 import Obseratorzy.Obserwator;
 import Ogłoszenia.Ogloszenie;
-import javafx.scene.control.Tab;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
