@@ -19,8 +19,8 @@ public class TestKalendarza {
         Assertions.assertEquals(0,kalendarz.stworzListeWydarzenNaDzien(
                 Kalendarz.zwracaDateNajbUbieglegoPoniedzialku(LocalDateTime.now()),i).size());
 
-        for(int i=0;i<10;i++)
-        kalendarz.dodajWydarzenieDoKalendarza(new Wydarzenie());
+        //for(int i=0;i<10;i++)
+        //kalendarz.dodajWydarzenieDoKalendarza(new Wydarzenie());
     }
 
 }

@@ -30,12 +30,18 @@ public class studentLoginController {
 
     @FXML
     private Label label;
+    public boolean isLoginAndPasswordCorrect(Uzytkownik uzytkownik, String login, String password){
+        if(login.equals(uzytkownik.getLogin()) && password.equals(uzytkownik.getHaslo()))
+            return true;
+        else
+            return false;
+    }
     @FXML
     public void loginButtonAction() throws IOException, ClassNotFoundException {
         ArrayList<Student> listaStudentow = new ArrayList<Student>();
         listaStudentow.addAll(SerializacjaObiektow.odczytStudentow());
         for(Uzytkownik uzytkownik: listaStudentow){
-            if(loginTF.getText().equals(uzytkownik.getLogin()) && passwordTF.getText().equals(uzytkownik.getHaslo())){
+            if(isLoginAndPasswordCorrect(uzytkownik, loginTF.getText(), passwordTF.getText())){
                 PrzekazywanieStudenta.setIndeksStudentaLista(listaStudentow.indexOf(uzytkownik));
                 try {
                     Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-student.fxml"));
