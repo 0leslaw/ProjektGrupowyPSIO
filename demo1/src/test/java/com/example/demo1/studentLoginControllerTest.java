@@ -17,5 +17,7 @@ class studentLoginControllerTest {
 
         Assertions.assertEquals(false, SLC.isLoginAndPasswordCorrect(student1, "duda", "duda"));
         Assertions.assertEquals(true, SLC.isLoginAndPasswordCorrect(student2, "duda", "duda"));
+
+
     }
 }
