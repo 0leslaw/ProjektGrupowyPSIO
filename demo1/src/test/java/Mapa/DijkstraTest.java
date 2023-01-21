@@ -9,22 +9,85 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DijkstraTest {
+
     @Test
-    public void znajdzDroge(){
+    public void testOleslaw(){
+
+        //sprawdzenie czy droga od przeciwleglych biegnie po przekątnej dla roznych gridow
+        //przy okazji sprawdzamy czy przy skalowaniu tego samego ukladu zostaje ta sama droga
+        ArrayList<Wezel> lista1;
+        for (int i=2;i<10;i++) {
+            lista1 = tworzyGridPolaczonychDookola(i, i);
+            TestZawo1(lista1, lista1.get(0), lista1.get(lista1.size() - 1), 142 * (i-1)*i);
+        }
+        lista1 = tworzyGridPolaczonychDookola(1, 10);
+        //sprawdzenie przykladowych scierzek
+        TestZawo1(lista1,lista1.get(4),lista1.get(32),142*2+100);
+        TestZawo1(lista1,lista1.get(59),lista1.get(37),142*2);
+        TestZawo1(lista1,lista1.get(19),lista1.get(18),100);
+        TestZawo1(lista1,lista1.get(8),lista1.get(72),142*6+100);
+    }
+
+    public ArrayList<Wezel> tworzyGridPolaczonychDookola(int mnoznik_dlugosci,int ilosc_w_k){
+
         ArrayList<Wezel> wlist = new ArrayList<>();
-        Wezel[][] wTab = new Wezel[10][10];
-        Wezel roboczy;
-        for(int i =0;i<10;i++)
-            for(int j =0;j<10;j++) {
-                wlist.add(new Wezel(Integer.toString(i) + "x" + Integer.toString(j), j * 10, i * 10));
-                wTab[i][j] = wlist.get(wlist.size()-1);
+        Wezel[][] wTab = new Wezel[ilosc_w_k][ilosc_w_k];
+
+        for(int i =0;i<ilosc_w_k;i++)
+            for(int j =0;j<ilosc_w_k;j++)
+                wTab[i][j] = new Wezel(Integer.toString(i) + "x" + Integer.toString(j), j * 10, i * 10);
+
+
+        for(int i =1;i<ilosc_w_k-1;i++)
+            for(int j =1;j<ilosc_w_k-1;j++){
+                wTab[i][j].dodaj_sasiada(wTab[i-1][j],100*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i+1][j],100*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i][j-1],100*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i][j+1],100*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i-1][j-1],142*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i+1][j-1],142*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i-1][j+1],142*mnoznik_dlugosci);
+                wTab[i][j].dodaj_sasiada(wTab[i+1][j+1],142*mnoznik_dlugosci);
             }
+        for (int i =1;i<ilosc_w_k-1;i++){
+            wTab[i][0].dodaj_sasiada(wTab[i][1],100*mnoznik_dlugosci);
+            wTab[i][0].dodaj_sasiada(wTab[i-1][1],142*mnoznik_dlugosci);
+            wTab[i][0].dodaj_sasiada(wTab[i+1][1],142*mnoznik_dlugosci);
 
-        for(int i =0;i<10;i++)
-            for(int j =0;j<10;j++){
+            wTab[i][ilosc_w_k-1].dodaj_sasiada(wTab[i][ilosc_w_k-2],100*mnoznik_dlugosci);
+            wTab[i][ilosc_w_k-1].dodaj_sasiada(wTab[i-1][ilosc_w_k-2],142*mnoznik_dlugosci);
+            wTab[i][ilosc_w_k-1].dodaj_sasiada(wTab[i+1][ilosc_w_k-2],142*mnoznik_dlugosci);
 
-            }
+            wTab[0][i].dodaj_sasiada(wTab[1][i],100*mnoznik_dlugosci);
+            wTab[0][i].dodaj_sasiada(wTab[1][i-1],142*mnoznik_dlugosci);
+            wTab[0][i].dodaj_sasiada(wTab[1][i+1],142*mnoznik_dlugosci);
 
+            wTab[ilosc_w_k-1][i].dodaj_sasiada(wTab[ilosc_w_k-2][i],100*mnoznik_dlugosci);
+            wTab[ilosc_w_k-1][i].dodaj_sasiada(wTab[ilosc_w_k-2][i-1],142*mnoznik_dlugosci);
+            wTab[ilosc_w_k-1][i].dodaj_sasiada(wTab[ilosc_w_k-2][i+1],142*mnoznik_dlugosci);
+        }
+        wTab[0][0].dodaj_sasiada(wTab[1][0],100*mnoznik_dlugosci);
+        wTab[0][0].dodaj_sasiada(wTab[0][1],100*mnoznik_dlugosci);
+        wTab[0][0].dodaj_sasiada(wTab[1][1],142*mnoznik_dlugosci);
+
+        wTab[ilosc_w_k-1][0].dodaj_sasiada(wTab[ilosc_w_k-2][0],100*mnoznik_dlugosci);
+        wTab[ilosc_w_k-1][0].dodaj_sasiada(wTab[ilosc_w_k-1][1],100*mnoznik_dlugosci);
+        wTab[ilosc_w_k-1][0].dodaj_sasiada(wTab[ilosc_w_k-2][1],142*mnoznik_dlugosci);
+
+        wTab[0][ilosc_w_k-1].dodaj_sasiada(wTab[0][ilosc_w_k-2],100*mnoznik_dlugosci);
+        wTab[0][ilosc_w_k-1].dodaj_sasiada(wTab[1][ilosc_w_k-1],100*mnoznik_dlugosci);
+        wTab[0][ilosc_w_k-1].dodaj_sasiada(wTab[1][ilosc_w_k-2],142*mnoznik_dlugosci);
+
+        wTab[ilosc_w_k-1][ilosc_w_k-1].dodaj_sasiada(wTab[ilosc_w_k-1][ilosc_w_k-2],100*mnoznik_dlugosci);
+        wTab[ilosc_w_k-1][ilosc_w_k-1].dodaj_sasiada(wTab[ilosc_w_k-2][ilosc_w_k-1],100*mnoznik_dlugosci);
+        wTab[ilosc_w_k-1][ilosc_w_k-1].dodaj_sasiada(wTab[ilosc_w_k-2][ilosc_w_k-2],142*mnoznik_dlugosci);
+
+        for(int i =0;i<ilosc_w_k;i++)
+            for(int j =0;j<ilosc_w_k;j++)
+                wlist.add(wTab[i][j]);
+
+
+        return wlist;
     }
 
     @Test
@@ -60,7 +123,6 @@ class DijkstraTest {
         TestZawo1(wezly, A3, A6, 100);
         TestZawo1(wezly, A3, A4, 80);
     }
-    //lol
     public void TestZawo1(ArrayList<Wezel> wezly, Wezel A1, Wezel A2, int val){
         Dijkstra DJ = new Dijkstra(wezly, A1, A2);
         DJ.setWezly(wezly);
