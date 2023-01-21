@@ -23,6 +23,7 @@ public class TestKalendarza {
         //for(int i=0;i<10;i++)
         //kalendarz.dodajWydarzenieDoKalendarza(new Wydarzenie());
 
+
         //dla niepustej listy i wydarzen z poniedzialku tego tygodnia
         for(int i=0;i<99;i++)
             kalendarz.dodajWydarzenieDoKalendarza(new Wydarzenie("test1",
