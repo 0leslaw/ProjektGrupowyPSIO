@@ -60,6 +60,7 @@ class DijkstraTest {
         TestZawo1(wezly, A3, A6, 100);
         TestZawo1(wezly, A3, A4, 80);
     }
+    //lol
     public void TestZawo1(ArrayList<Wezel> wezly, Wezel A1, Wezel A2, int val){
         Dijkstra DJ = new Dijkstra(wezly, A1, A2);
         DJ.setWezly(wezly);
