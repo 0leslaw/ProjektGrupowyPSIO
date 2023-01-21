@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Dijkstra {
+    public ArrayList<Wezel> getWezly() {
+        return wezly;
+    }
+
+    public void setWezly(ArrayList<Wezel> wezly) {
+        this.wezly = wezly;
+    }
+
     private ArrayList<Wezel> wezly;
     private Wezel zrodlo;
     private Wezel cel;
