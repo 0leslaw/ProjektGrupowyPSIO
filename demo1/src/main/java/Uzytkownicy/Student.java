@@ -12,6 +12,12 @@ public class Student extends Uzytkownik{
     private int liczba_nowych_wydarzen;
     private boolean powiadomienia = true;
 
+    public Student(){
+        super();
+        semestr = 0;
+        nr_indeksu = "";
+        kierunek = "";
+    }
     public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);
         this.semestr = semestr;

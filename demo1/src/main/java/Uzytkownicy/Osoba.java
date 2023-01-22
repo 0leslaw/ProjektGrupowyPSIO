@@ -8,6 +8,12 @@ public abstract class Osoba extends Object implements Serializable {
     protected String nazwisko;
     protected String email;
 
+    public Osoba(){
+        imie = "";
+        drugie_imie = "";
+        nazwisko = "";
+        email = "";
+    }
     public Osoba(String imie, String drugie_imie, String nazwisko, String email) {
         this.imie = imie;
         this.drugie_imie = drugie_imie;

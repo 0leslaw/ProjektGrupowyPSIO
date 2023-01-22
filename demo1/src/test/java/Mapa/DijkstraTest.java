@@ -1,31 +1,28 @@
 package Mapa;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class DijkstraTest {
 
     @Test
-    public void testOleslaw(){
+    public void test1(){
 
         //sprawdzenie czy droga od przeciwleglych biegnie po przekątnej dla roznych gridow
         //przy okazji sprawdzamy czy przy skalowaniu tego samego ukladu zostaje ta sama droga
         ArrayList<Wezel> lista1;
         for (int i=2;i<10;i++) {
             lista1 = tworzyGridPolaczonychDookola(i, i);
-            TestZawo1(lista1, lista1.get(0), lista1.get(lista1.size() - 1), 142 * (i-1)*i);
+            TestPom(lista1, lista1.get(0), lista1.get(lista1.size() - 1), 142 * (i-1)*i);
         }
         lista1 = tworzyGridPolaczonychDookola(1, 10);
         //sprawdzenie przykladowych scierzek
-        TestZawo1(lista1,lista1.get(4),lista1.get(32),142*2+100);
-        TestZawo1(lista1,lista1.get(59),lista1.get(37),142*2);
-        TestZawo1(lista1,lista1.get(19),lista1.get(18),100);
-        TestZawo1(lista1,lista1.get(8),lista1.get(72),142*6+100);
+        TestPom(lista1,lista1.get(4),lista1.get(32),142*2+100);
+        TestPom(lista1,lista1.get(59),lista1.get(37),142*2);
+        TestPom(lista1,lista1.get(19),lista1.get(18),100);
+        TestPom(lista1,lista1.get(8),lista1.get(72),142*6+100);
     }
 
     public ArrayList<Wezel> tworzyGridPolaczonychDookola(int mnoznik_dlugosci,int ilosc_w_k){
@@ -91,7 +88,7 @@ class DijkstraTest {
     }
 
     @Test
-    void TestZawo() {
+    void Test2() {
         ArrayList<Wezel> wezly = new ArrayList<Wezel>();
 
         Wezel A1 = new Wezel("A1", 0, 0);
@@ -117,13 +114,13 @@ class DijkstraTest {
         wezly.add(A5);
         wezly.add(A6);
 
-        TestZawo1(wezly, A5, A3, 70);
-        TestZawo1(wezly, A5, A6, 102);
-        TestZawo1(wezly, A6, A3, 100);
-        TestZawo1(wezly, A3, A6, 100);
-        TestZawo1(wezly, A3, A4, 80);
+        TestPom(wezly, A5, A3, 70);
+        TestPom(wezly, A5, A6, 102);
+        TestPom(wezly, A6, A3, 100);
+        TestPom(wezly, A3, A6, 100);
+        TestPom(wezly, A3, A4, 80);
     }
-    public void TestZawo1(ArrayList<Wezel> wezly, Wezel A1, Wezel A2, int val){
+    public void TestPom(ArrayList<Wezel> wezly, Wezel A1, Wezel A2, int val){
         Dijkstra DJ = new Dijkstra(wezly, A1, A2);
         DJ.setWezly(wezly);
         DJ.dijkstra_algo();

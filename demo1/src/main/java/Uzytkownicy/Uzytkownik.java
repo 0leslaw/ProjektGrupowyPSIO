@@ -5,6 +5,11 @@ public abstract class Uzytkownik extends Osoba {
     protected String login;
     protected String haslo;
 
+    public Uzytkownik(){
+        super();
+        login = "test";
+        haslo = "test";
+    }
     public Uzytkownik(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo) {
         super(imie, drugie_imie, nazwisko, email);
         this.login = login;
