@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Kalendarz  implements Obserwowany, Serializable {
 
     // lista obserwatorow
-    ArrayList<Obserwator> lista_obserwatorow = new ArrayList<>();
+    private ArrayList<Obserwator> lista_obserwatorow = new ArrayList<>();
 
     // stan obiektu obserwowanego
     private ArrayList<Wydarzenie> lista_wydarzen = new ArrayList<>();

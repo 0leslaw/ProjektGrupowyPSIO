@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class TablicaOgloszen implements Obserwowany, Serializable {
 
-    ArrayList<Obserwator> lista_obserwatorow = new ArrayList<>();
-    ArrayList<Ogloszenie> ogloszenia = new ArrayList<>();
+    private ArrayList<Obserwator> lista_obserwatorow = new ArrayList<>();
+    private ArrayList<Ogloszenie> ogloszenia = new ArrayList<>();
 
     public TablicaOgloszen(ArrayList<Ogloszenie> ogloszenia){
         this.ogloszenia = ogloszenia;
