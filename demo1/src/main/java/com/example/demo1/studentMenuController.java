@@ -36,7 +36,8 @@ public class studentMenuController implements Initializable{
     private Label wydarzeniaNowe;
     @FXML
     private Label ogloszeniaNowe;
-
+    @FXML
+    private Button toSettings;
 
     @FXML
     public void toAnnouncement() {
@@ -61,6 +62,13 @@ public class studentMenuController implements Initializable{
         mapController controller = new mapController();
         controller.Map(mapButton);
     }
+
+    @FXML
+    public void toSettings() {
+        settingsController controller = new settingsController();
+        controller.Settings(toSettings);
+    }
+
     @FXML
     public void returnButtonAction() {
         try {

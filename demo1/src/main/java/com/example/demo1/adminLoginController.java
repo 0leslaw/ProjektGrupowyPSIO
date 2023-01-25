@@ -41,25 +41,37 @@ public class adminLoginController {
         }
     }
     public void loginButtonAction() throws IOException, ClassNotFoundException {
-        ArrayList<Administrator> listaAdministracja = new ArrayList<>();
-        listaAdministracja.addAll(SerializacjaObiektow.odczytAdminow());
-        for (Uzytkownik uzytkownik : listaAdministracja) {
-            if (loginTF.getText().equals(uzytkownik.getLogin()) && passwordTF.getText().equals(uzytkownik.getHaslo())) {
-                PrzekazywaniePracownika.setIndeksPracownika(listaAdministracja.indexOf(uzytkownik));
-                try {
-                    Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-admin.fxml"));
-                    Stage stage = (Stage) loginButton.getScene().getWindow();
-                    stage.setTitle("Main Panel");
-                    stage.setScene(new Scene(root1));
-                    stage.show();
 
-                } catch (Exception e) {
-                    System.out.println("Nie można załadować panelu głównego");
-                }
-            }else {
-                label.setVisible(true);
-            }
+        try {
+            Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-admin.fxml"));
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            stage.setTitle("Main Panel");
+            stage.setScene(new Scene(root1));
+            stage.show();
+
+        } catch (Exception e) {
+            System.out.println("Nie można załadować panelu głównego");
         }
+
+//        ArrayList<Administrator> listaAdministracja = new ArrayList<>();
+//        listaAdministracja.addAll(SerializacjaObiektow.odczytAdminow());
+//        for (Uzytkownik uzytkownik : listaAdministracja) {
+//            if (loginTF.getText().equals(uzytkownik.getLogin()) && passwordTF.getText().equals(uzytkownik.getHaslo())) {
+//                PrzekazywaniePracownika.setIndeksPracownika(listaAdministracja.indexOf(uzytkownik));
+//                try {
+//                    Parent root1 = FXMLLoader.load(getClass().getResource("main-panel-admin.fxml"));
+//                    Stage stage = (Stage) loginButton.getScene().getWindow();
+//                    stage.setTitle("Main Panel");
+//                    stage.setScene(new Scene(root1));
+//                    stage.show();
+//
+//                } catch (Exception e) {
+//                    System.out.println("Nie można załadować panelu głównego");
+//                }
+//            }else {
+//                label.setVisible(true);
+//            }
+//        }
     }
 }
 

@@ -28,6 +28,7 @@ public class HelloApplication extends Application {
 //        TablicaOgloszen tab = new TablicaOgloszen(new ArrayList<>());
 //        Powiadomienie ob = new Powiadomienie(tab);
 //        SerializacjaObiektow.zapisTablicyOgloszen(tab, "TablicaOgloszen.ser");
+//        SerializacjaObiektow.zapisStudentow(new ArrayList<>(), "PlikStudentow");
 //        SerializacjaObiektow.zapisProwadzacych(new ArrayList<>(), "PlikPracownikow.ser");
 //        SerializacjaObiektow.zapisSamorzad(new ArrayList<>(), "PlikSamorzadu.ser");
         launch();
