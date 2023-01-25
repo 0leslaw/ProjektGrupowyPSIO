@@ -25,6 +25,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+
 //        TablicaOgloszen tab = new TablicaOgloszen(new ArrayList<>());
 //        Powiadomienie ob = new Powiadomienie(tab);
 //        SerializacjaObiektow.zapisTablicyOgloszen(tab, "TablicaOgloszen.ser");

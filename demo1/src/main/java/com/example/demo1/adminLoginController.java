@@ -41,7 +41,6 @@ public class adminLoginController {
         }
     }
     public void loginButtonAction() throws IOException, ClassNotFoundException {
-
         ArrayList<Administrator> listaAdministracja = new ArrayList<>();
         listaAdministracja.addAll(SerializacjaObiektow.odczytAdminow());
         for (Uzytkownik uzytkownik : listaAdministracja) {
