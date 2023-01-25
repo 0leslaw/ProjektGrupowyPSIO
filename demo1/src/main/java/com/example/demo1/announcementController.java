@@ -126,6 +126,7 @@ public class announcementController implements Initializable {
         }
         if(studenci != null){
             studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_nowych_ogloszen(0);
+            studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_waznych_ogloszen(0);
         }
         try {
             SerializacjaObiektow.zapisStudentow(studenci, "PlikStudentow.ser");

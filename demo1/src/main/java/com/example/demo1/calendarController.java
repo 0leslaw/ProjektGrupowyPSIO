@@ -85,6 +85,7 @@ public class calendarController implements Initializable
         }
         if(studenci != null){
             studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_nowych_wydarzen(0);
+            studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_waznych_wydarzen(0);
         }
         try {
             SerializacjaObiektow.zapisStudentow(studenci, "PlikStudentow.ser");

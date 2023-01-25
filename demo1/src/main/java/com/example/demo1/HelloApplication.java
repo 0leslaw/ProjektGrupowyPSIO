@@ -2,8 +2,10 @@ package com.example.demo1;
 
 import Obseratorzy.Obserwator;
 import Obseratorzy.Powiadomienie;
+import Obserwowani.Kalendarz;
 import Obserwowani.TablicaOgloszen;
 import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Administrator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -25,11 +27,11 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-//        TablicaOgloszen tab = new TablicaOgloszen(new ArrayList<>());
-//        Powiadomienie ob = new Powiadomienie(tab);
-//        SerializacjaObiektow.zapisTablicyOgloszen(tab, "TablicaOgloszen.ser");
 //        SerializacjaObiektow.zapisProwadzacych(new ArrayList<>(), "PlikPracownikow.ser");
 //        SerializacjaObiektow.zapisSamorzad(new ArrayList<>(), "PlikSamorzadu.ser");
+//        ArrayList<Administrator> admin = new ArrayList<>();
+//        admin.add(new Administrator("admin", "admin","admin","admin","admin","admin"));
+//        SerializacjaObiektow.zapisAdminow(admin, "PlikAdminow.ser");
         launch();
     }
 }

@@ -11,6 +11,7 @@ public class Pracownik extends Uzytkownik{
     private String tytul_naukowy;
     private String katedra;
     private ArrayList<Kursy> kursy = new ArrayList<>();
+    private static final long serialVersionUID = 123L;
 
     public Pracownik(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, String wydzial, String tytul_naukowy, String katedra) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);

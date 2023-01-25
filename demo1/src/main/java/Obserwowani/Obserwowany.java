@@ -7,5 +7,5 @@ import java.io.IOException;
 public interface Obserwowany {
     public void zarejestrujObserwatora(Obserwator obserwator);
     public void usunObserwatora(Obserwator obserwator);
-    public void powiadomObserwatorow() throws IOException, ClassNotFoundException;
+    public void powiadomObserwatorow(String s) throws IOException, ClassNotFoundException;
 }

@@ -25,15 +25,15 @@ public class TablicaOgloszen implements Obserwowany, Serializable {
     }
 
     @Override
-    public void powiadomObserwatorow() throws IOException, ClassNotFoundException {
+    public void powiadomObserwatorow(String tresc) throws IOException, ClassNotFoundException {
         for(int i = 0; i<lista_obserwatorow.size(); i++){
-            lista_obserwatorow.get(i).uaktualnijOgloszenia();
+            lista_obserwatorow.get(i).uaktualnijOgloszenia(tresc);
         }
     }
 
     public void dodajOgloszenieDoTablicy(Ogloszenie ogloszenie) throws IOException, ClassNotFoundException {
         ogloszenia.add(ogloszenie);
-        powiadomObserwatorow();
+        powiadomObserwatorow(ogloszenie.getText());
     }
 
     public ArrayList<Ogloszenie> getOgloszenia(){

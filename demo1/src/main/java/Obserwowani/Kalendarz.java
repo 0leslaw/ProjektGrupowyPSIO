@@ -28,16 +28,15 @@ public class Kalendarz  implements Obserwowany, Serializable {
         lista_obserwatorow.remove(obserwator);
     }
 
-    @Override
-    public void powiadomObserwatorow() throws IOException, ClassNotFoundException {
+    public void powiadomObserwatorow(String tresc) throws IOException, ClassNotFoundException {
         for(int i = 0; i<lista_obserwatorow.size(); i++){
-            lista_obserwatorow.get(i).uaktualnijWydarzenia();
+            lista_obserwatorow.get(i).uaktualnijWydarzenia(tresc);
         }
     }
 
     public void dodajWydarzenieDoKalendarza(Wydarzenie nowe_wydarzenie) throws IOException, ClassNotFoundException{
         lista_wydarzen.add(nowe_wydarzenie);
-        powiadomObserwatorow();
+        powiadomObserwatorow(nowe_wydarzenie.getOpis_wydarzenia());
     }
 
     public ArrayList<Wydarzenie> stworzListeWydarzenNaDzien(LocalDateTime pierwszy_dzien_szukanego_tygodnia, int przesuniecie_od_poniedzialku) {

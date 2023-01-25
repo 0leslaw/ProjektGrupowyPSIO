@@ -10,7 +10,11 @@ public class Student extends Uzytkownik{
     private String kierunek;
     private int liczba_nowych_ogloszen;
     private int liczba_nowych_wydarzen;
+    private int liczba_waznych_ogloszen;
+    private int liczba_waznych_wydarzen;
     private boolean powiadomienia = true;
+    private static final long serialVersionUID = 12345L;
+    private String szukane = "";
 
     public Student(){
         super();
@@ -18,6 +22,7 @@ public class Student extends Uzytkownik{
         nr_indeksu = "";
         kierunek = "";
     }
+
     public Student(String imie, String drugie_imie, String nazwisko, String email, String login, String haslo, int semestr, String nr_indeksu, String kierunek) {
         super(imie, drugie_imie, nazwisko, email, login, haslo);
         this.semestr = semestr;
@@ -96,5 +101,29 @@ public class Student extends Uzytkownik{
 
     public void setPowiadomienia(boolean powiadomienia) {
         this.powiadomienia = powiadomienia;
+    }
+
+    public String getSzukane() {
+        return szukane;
+    }
+
+    public void setSzukane(String szukane) {
+        this.szukane = szukane;
+    }
+
+    public int getLiczba_waznych_wydarzen() {
+        return liczba_waznych_wydarzen;
+    }
+
+    public void setLiczba_waznych_wydarzen(int liczba_waznych_wydarzen) {
+        this.liczba_waznych_wydarzen = liczba_waznych_wydarzen;
+    }
+
+    public int getLiczba_waznych_ogloszen() {
+        return liczba_waznych_ogloszen;
+    }
+
+    public void setLiczba_waznych_ogloszen(int liczba_waznych_ogloszen) {
+        this.liczba_waznych_ogloszen = liczba_waznych_ogloszen;
     }
 }

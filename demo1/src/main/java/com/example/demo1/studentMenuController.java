@@ -87,9 +87,9 @@ public class studentMenuController implements Initializable{
         }
         if(studenci != null){
             if(studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).isPowiadomienia()){
-                ogloszeniaNowe.setText("Nowe ogłoszenia: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_nowych_ogloszen());
+                ogloszeniaNowe.setText("Nowe ogłoszenia: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_nowych_ogloszen() + "( w tym ważnych: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_waznych_ogloszen() + ")");
                 ogloszeniaNowe.setVisible(true);
-                wydarzeniaNowe.setText("Nowe wydarzenia: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_nowych_wydarzen());
+                wydarzeniaNowe.setText("Nowe wydarzenia: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_nowych_wydarzen() + "( w tym ważnych: " + studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).getLiczba_waznych_wydarzen() + ")");
                 wydarzeniaNowe.setVisible(true);
             }
         }
