@@ -6,10 +6,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.usunAdminaController">
    <children>
@@ -21,7 +19,10 @@
       <Label fx:id="uwaga" alignment="CENTER" layoutX="193.0" layoutY="339.0" prefHeight="17.0" prefWidth="213.0" text="Pomyślnie usunięto studenta" visible="false" />
       <TextField fx:id="szukaneImie" layoutX="139.0" layoutY="22.0" prefHeight="26.0" prefWidth="103.0" promptText="imię" />
       <TextField fx:id="szukaneNazwisko" layoutX="260.0" layoutY="23.0" prefHeight="26.0" prefWidth="103.0" promptText="nazwisko" />
-      <Button fx:id="szukaj" layoutX="504.0" layoutY="23.0" mnemonicParsing="false" text="Szukaj" onAction="#szukajAction"/>
+      <Button fx:id="szukaj" layoutX="486.0" layoutY="16.0" mnemonicParsing="false" onAction="#szukajAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #5070cc;" text="Szukaj" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="16.0" />
+         </font></Button>
       <ScrollPane layoutX="-1.0" layoutY="64.0" prefHeight="335.0" prefWidth="600.0" style="-fx-background-color: #ffeacc;">
          <content>
             <VBox fx:id="adminBox" prefHeight="334.0" prefWidth="583.0" style="-fx-background-color: #ffeacc;">
