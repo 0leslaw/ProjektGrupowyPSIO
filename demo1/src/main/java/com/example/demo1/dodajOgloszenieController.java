@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class dodajOgloszenieController implements Initializable {
     private TextField tytul;
 
     @FXML
-    private TextField tresc;
+    private TextArea tresc;
 
     @FXML
     private Label brakDanych;
