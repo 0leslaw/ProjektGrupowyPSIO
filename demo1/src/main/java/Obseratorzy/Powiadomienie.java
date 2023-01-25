@@ -22,8 +22,10 @@ public class Powiadomienie implements Obserwator, Serializable {
         for(Student student: studenci){
             if(student.isPowiadomienia()){
                 student.setLiczba_nowych_wydarzen(student.getLiczba_nowych_wydarzen()+1);
-                if (tresc.contains(student.getSzukane())){
-                    student.setLiczba_waznych_wydarzen(student.getLiczba_waznych_wydarzen()+1);
+                if(!student.getSzukane().equals("")) {
+                    if (tresc.toLowerCase().contains(student.getSzukane().toLowerCase())) {
+                        student.setLiczba_waznych_wydarzen(student.getLiczba_waznych_wydarzen() + 1);
+                    }
                 }
             }
         }
@@ -37,7 +39,7 @@ public class Powiadomienie implements Obserwator, Serializable {
             if(student.isPowiadomienia()){
                 student.setLiczba_nowych_ogloszen(student.getLiczba_nowych_ogloszen()+1);
                 if(!student.getSzukane().equals("")) {
-                    if (tresc.contains(student.getSzukane())) {
+                    if (tresc.toLowerCase().contains(student.getSzukane().toLowerCase())) {
                         student.setLiczba_waznych_ogloszen(student.getLiczba_waznych_ogloszen() + 1);
                     }
                 }

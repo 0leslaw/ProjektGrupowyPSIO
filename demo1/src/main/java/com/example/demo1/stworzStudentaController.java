@@ -72,22 +72,29 @@ public class stworzStudentaController implements Initializable {
     public void dodajStudentaButtonOnAction() throws IOException, ClassNotFoundException{ // chyba ze przydzielamy studentowi jakos losowo kursy z pliku
         if(imie.getText().length() != 0 && nazwisko.getText().length() != 0 && email.getText().length() != 0 && login.getText().length() != 0 && haslo.getText().length() != 0 && semestr.getText().length() != 0 && numer_indeksu.getText().length() != 0 && kierunek.getText().length() != 0) {
             ArrayList<Student> listaStudentow = SerializacjaObiektow.odczytStudentow();
-            Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText());
-            listaStudentow.add(student);
-            SerializacjaObiektow.zapisStudentow(listaStudentow, "PlikStudentow.ser");
-            imie.setText("");
-            drugie_imie.setText("");
-            nazwisko.setText("");
-            email.setText("");
-            login.setText("");
-            haslo.setText("");
-            semestr.setText("");
-            numer_indeksu.setText("");
-            kierunek.setText("");
-            uwaga.setText("Pomyślnie dodano studenta");
-            uwaga.setAlignment(Pos.CENTER);
-            uwaga.setTextAlignment(TextAlignment.CENTER);
-            uwaga.setVisible(true);
+            try {
+                Student student = new Student(imie.getText(), drugie_imie.getText(), nazwisko.getText(), email.getText(), login.getText(), haslo.getText(), Integer.parseInt(semestr.getText()), numer_indeksu.getText(), kierunek.getText());
+                listaStudentow.add(student);
+                SerializacjaObiektow.zapisStudentow(listaStudentow, "PlikStudentow.ser");
+                imie.setText("");
+                drugie_imie.setText("");
+                nazwisko.setText("");
+                email.setText("");
+                login.setText("");
+                haslo.setText("");
+                semestr.setText("");
+                numer_indeksu.setText("");
+                kierunek.setText("");
+                uwaga.setText("Pomyślnie dodano studenta");
+                uwaga.setAlignment(Pos.CENTER);
+                uwaga.setTextAlignment(TextAlignment.CENTER);
+                uwaga.setVisible(true);
+            }catch(Exception e){
+                uwaga.setText("Podano tekst a potrzeba int");
+                uwaga.setAlignment(Pos.CENTER);
+                uwaga.setTextAlignment(TextAlignment.CENTER);
+                uwaga.setVisible(true);
+            }
         }else{
             uwaga.setText("Należy podać wszystkie dane");
             uwaga.setAlignment(Pos.CENTER);
