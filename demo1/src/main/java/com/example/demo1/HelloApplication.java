@@ -4,6 +4,7 @@ import Obseratorzy.Obserwator;
 import Obseratorzy.Powiadomienie;
 import Obserwowani.TablicaOgloszen;
 import Serializacja.SerializacjaObiektow;
+import Uzytkownicy.Administrator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -32,6 +33,9 @@ public class HelloApplication extends Application {
 //        SerializacjaObiektow.zapisStudentow(new ArrayList<>(), "PlikStudentow");
 //        SerializacjaObiektow.zapisProwadzacych(new ArrayList<>(), "PlikPracownikow.ser");
 //        SerializacjaObiektow.zapisSamorzad(new ArrayList<>(), "PlikSamorzadu.ser");
+//        ArrayList<Administrator> admin = new ArrayList<>();
+//        admin.add(new Administrator("admin", "admin","admin","admin","admin","admin"));
+//        SerializacjaObiektow.zapisAdminow(admin, "PlikAdminow.ser");
         launch();
     }
 }
