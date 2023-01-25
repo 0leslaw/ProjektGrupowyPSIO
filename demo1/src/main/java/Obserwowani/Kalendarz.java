@@ -12,6 +12,7 @@ public class Kalendarz  implements Obserwowany, Serializable {
     // lista obserwatorow
     private ArrayList<Obserwator> lista_obserwatorow = new ArrayList<>();
 
+
     // stan obiektu obserwowanego
     private ArrayList<Wydarzenie> lista_wydarzen = new ArrayList<>();
 

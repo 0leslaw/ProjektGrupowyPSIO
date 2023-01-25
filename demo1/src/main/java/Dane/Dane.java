@@ -44,6 +44,7 @@ public class Dane {
 
     public static ArrayList<Wydarzenie> stworzWydarzenia(LocalDateTime dzien, int przesuniecie, int od_pon) throws IOException, ClassNotFoundException {
         Kalendarz kalendarz = SerializacjaObiektow.odczytKalendarz();
+        SerializacjaObiektow.zapisKalendarza(kalendarz, "Kalendarz.ser");
         return kalendarz.stworzListeWydarzenNaDzien(dzien.plusDays(7*przesuniecie), od_pon);
     }
 

@@ -4,6 +4,8 @@ import Obserwowani.Kalendarz;
 import PakietWydarzenie.Wydarzenie;
 import Serializacja.SerializacjaObiektow;
 import Uzytkownicy.Student;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,7 +16,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -28,14 +33,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class calendarController implements Initializable
-{
+public class calendarController implements Initializable {
     @FXML
     private Button returnButton;
 
     private int przesuniecie = 0;
     @FXML
     private GridPane grid;
+
     @FXML
     public void Calendar(Button calendarButton) {
         try {
@@ -46,7 +51,7 @@ public class calendarController implements Initializable
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Nie można załadować kalendarza");
             e.printStackTrace();
         }
@@ -61,7 +66,7 @@ public class calendarController implements Initializable
             stage.setTitle("Menu");
             stage.setScene(new Scene(root));
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Nie moża załadować panelu głównego");
         }
     }
@@ -75,7 +80,7 @@ public class calendarController implements Initializable
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        ArrayList<Student> studenci= null;
+        ArrayList<Student> studenci = null;
         try {
             studenci = SerializacjaObiektow.odczytStudentow();
         } catch (IOException e) {
@@ -83,7 +88,7 @@ public class calendarController implements Initializable
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        if(studenci != null){
+        if (studenci != null) {
             studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_nowych_wydarzen(0);
             studenci.get(PrzekazywanieStudenta.getIndeksStudentaLista()).setLiczba_waznych_wydarzen(0);
         }
@@ -94,7 +99,7 @@ public class calendarController implements Initializable
         }
     }
 
-    public void NextWeek(){
+    public void NextWeek() {
         przesuniecie++;
         try {
             fillGrid(1);
@@ -105,7 +110,7 @@ public class calendarController implements Initializable
         }
     }
 
-    public void LastWeek(){
+    public void LastWeek() {
         przesuniecie--;
         try {
             fillGrid(1);
@@ -117,9 +122,10 @@ public class calendarController implements Initializable
     }
 
     public void fillGrid(int tmp) throws IOException, ClassNotFoundException {
+
         ArrayList<Node> dniTyg = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-            dniTyg.add(grid.getChildren().get(i*tmp));
+            dniTyg.add(grid.getChildren().get(i * tmp));
         }
         grid.getChildren().clear();
         for (int i = 0; i < 7; i++) {
@@ -146,6 +152,7 @@ public class calendarController implements Initializable
                 tytul.setTextAlignment(TextAlignment.CENTER);
                 tytul.setMinWidth(91);
                 tytul.setMaxWidth(92);
+                HBox.setMargin(godzina, new Insets(0, 35, 0, 0));
                 box.getChildren().add(godzina);
                 box.getChildren().add(tytul);
                 grid.add(box, i, j + 2);
